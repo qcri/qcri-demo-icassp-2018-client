@@ -914,12 +914,13 @@
                                     <br/>
                                     <div class="btn-toolbar">
 
-                                        <button class="btn btn-danger btn-sm pull-xs-right"
-                                                onclick="start_listening();stopwatch.restart();toggleImage();">Start
+                                        <button id="start" class="btn btn-danger btn-sm pull-xs-right"
+                                                onclick="start_listening();stopwatch.restart();toggleImage();"><span
+                                                class="glyphicon glyphicon-off"></span> Start
                                             Talking
                                         </button>
-                                        <button class="btn btn-danger btn-sm pull-xs-right"
-                                                onclick="stop_listening();stopwatch.stop();toggleImage();"><span
+                                        <button id="stop" class="btn btn-danger btn-sm pull-xs-right"
+                                                onclick="stop_listening();stopwatch.stop();toggleImage();" style="display:none;"><span
                                                 class="glyphicon glyphicon-off"></span> Stop Talking
                                         </button>
                                     </div>
@@ -1273,6 +1274,8 @@
         $("#micrecording").toggle();
         $("#fake-mic").toggle();
         $("#asr-partial").toggle();
+        $("#start").toggle();
+        $("#stop").toggle();
     }
 </script>
 
