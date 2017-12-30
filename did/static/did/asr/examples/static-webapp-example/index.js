@@ -3,7 +3,8 @@
 //var ASR_SERVER = "qatslive4520.cloudapp.net:8888";
 //var ASR_SERVER = "localhost:8888";
 var ASR_SERVER = "dialectid.xyz:8888";
-
+var MIN_VOL = -100;
+var MAX_VOL = -50;
 //var ASR_SERVER = "icassp-demo-2018.qcri.org:8888";
 
 
@@ -182,7 +183,39 @@ var dictate = new Dictate({
     },
     onEvent: function (code, data) {
         __message(code, data);
-    }
+    },
+	audioProcessor : function() {
+		var array =  new Float32Array(window.userSpeechAnalyser.frequencyBinCount);
+		window.userSpeechAnalyser.getFloatFrequencyData(array);
+		var values = 0;
+		var average;
+
+		var length = array.length;
+
+		// get all the frequency amplitudes
+		for (var i = 0; i < length; i++) {
+			values += array[i];
+		}
+
+		average = values / length;
+
+		// if(DEBUG) console.log("[VOL] " + average);
+
+		// Perform clipping
+		if (average < MIN_VOL)
+			average = MIN_VOL;
+		if (average > MAX_VOL)
+			average = MAX_VOL;
+
+		average += 100;
+		average *= 100 / (MAX_VOL-MIN_VOL);
+		if (average == 100)
+			average = 99;
+
+		if(DEBUG) console.log("[VOL-CORRECTED] " + average);
+        $("#volume").prop('value', average);
+		// $("#volume").css("margin-left", "-" + (99 - average) + "%");
+	}
 });
 
 window.onload = function () {

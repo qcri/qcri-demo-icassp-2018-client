@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>QCRI/CSAIL-ICASSP Demo 2018</title>
+    <link href="{% static 'did/css/volume-meter.css' %}" rel="stylesheet">
     <link href="{% static 'did/css/application.min.css' %}" rel="stylesheet">
     <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
     <!--[if IE 9]>
@@ -890,6 +891,16 @@
                                     class="glyphicon glyphicon-remove"></i></a>
                         </div>
                     </header>
+                    <!--<div class="bg-gray-lighter mt-md">-->
+                                    <!--<progress class="progress progress-xs progress-bar-gray" value="100" max="100" style="width: 60%;"></progress>-->
+                            <!--</div>-->
+                    <!--<img id="volume" src="{% static 'did/img/volume-meter.png' %}" style="width:10%; " />-->
+    <progress id="volume" max="100" value="0" class="html5">
+    <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+			<div class="progress-bar">
+				<span style="width: 80%">80%</span>
+			</div>
+		</progress>
                     <div class="widget-body no-padding">
                         <ul class="news-list stretchable">
                             <li>
@@ -903,13 +914,22 @@
                                 <div class="news-item-info">
                                     <h5 class="name no-margin mb-xs"><a href="#">ASR <strong>partial</strong> output</a>
                                     </h5>
+                                    <!--<div class="subcontrol">-->
+                                        <!--<div id="volume-label-container"><span-->
+                                                <!--class="control-container-text"> Volume: </span></div>-->
+                                        <!--<div id="volume-container">-->
+                                            <!--<img src="{% static 'did/img/volume-meter.png' %}" />-->
+                                            <!--<div id="volume" style="margin-left: -99%;">-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
 
                                     <h4 id="asr-partial" class="text-right text-xs-center" style="display:none;">
-                                            <div class=" animated fadeIn handle ui-sortable-handle">
+                                        <div class=" animated fadeIn handle ui-sortable-handle">
                                                 <span class="spinner">
                                                     <i class="fa fa-spinner fa-spin"></i>
                                                 </span>
-                                            </div>
+                                        </div>
                                     </h4>
                                     <br/>
                                     <div class="btn-toolbar">
@@ -920,7 +940,8 @@
                                             Talking
                                         </button>
                                         <button id="stop" class="btn btn-danger btn-sm pull-xs-right"
-                                                onclick="stop_listening();stopwatch.stop();toggleImage();" style="display:none;"><span
+                                                onclick="stop_listening();stopwatch.stop();toggleImage();"
+                                                style="display:none;"><span
                                                 class="glyphicon glyphicon-off"></span> Stop Talking
                                         </button>
                                     </div>
