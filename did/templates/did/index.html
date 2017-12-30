@@ -9,6 +9,7 @@
     <!--[if IE 9]>
     <link href="{% static 'did/css/application-ie9-part2.css' %}" rel="stylesheet">
     <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'did/img/favicon.ico' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="">
@@ -924,7 +925,7 @@
                                         <!--</div>-->
                                     <!--</div>-->
 
-                                    <h4 id="asr-partial" class="text-right text-xs-center" style="display:none;">
+                                    <h4 id="asr-partial" class="text-right text-xs-center" style="font-family: 'Cairo', sans-serif;display:none;">
                                         <div class=" animated fadeIn handle ui-sortable-handle">
                                                 <span class="spinner">
                                                     <i class="fa fa-spinner fa-spin"></i>
@@ -977,8 +978,8 @@
 
                 <div class="form-group mb-0">
                     <label class="sr-only" for="transcripts">ASR output</label>
-                    <textarea class="form-control text-right" id="transcripts" placeholder="ASR output"
-                              rows="8"></textarea>
+                    <textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="ASR output"
+                              rows="8" style="font-family: 'Cairo', sans-serif;"></textarea>
                 </div>
             </div>
         </div>
