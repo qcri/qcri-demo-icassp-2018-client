@@ -735,6 +735,7 @@
             </small>
         </h2>
         <div class="row">
+
             <div class="col-lg-8">
                 <!-- minimal widget consist of .widget class. note bg-transparent - it can be any background like bg-gray,
                 bg-primary, bg-white -->
@@ -753,6 +754,166 @@
                     </div>
                 </section>
             </div>
+            <div class="col-lg-4">
+                            <section class="widget widget-card bg-info text-white">
+                    <div class="widget-body clearfix">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <span class="widget-icon">
+                                    <i class="glyphicon glyphicon-globe"></i>
+                                </span>
+                            </div>
+                            <div class="col-xs-9">
+                                <div class="live-tile carousel" data-mode="carousel" data-speed="750" data-delay="3000" data-height="57" style="height: 57px;">
+                                    <!--<div class="slide" style="transition-property: transform; transition-duration: 750ms; transition-timing-function: ease; transform: translate(0%, -100%) translateZ(0px);">-->
+                                        <!--<h6 class="no-margin">VISITS TODAY</h6>-->
+                                        <!--<p class="h2 no-margin fw-normal">12,324</p>-->
+                                    <!--</div>-->
+                                    <div class="slide active" style="transform: translate(0%, 0%) translateZ(0px); transition-duration: 750ms; transition-property: transform; transition-timing-function: ease;">
+                                        <h6 class="no-margin">MAIN DIALECT OF THE SPEAKER</h6>
+                                        <p id="main-dialect" class="h2 no-margin fw-normal">Egyptian</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h6 class="no-margin">Probability</h6>
+                                <div class="live-tile carousel" data-mode="carousel" data-speed="750" data-delay="3000" data-height="24" style="height: 24px;">
+                                    <!--<div class="slide" style="transition-property: transform; transition-duration: 750ms; transition-timing-function: ease; transform: translate(0%, -100%) translateZ(0px);">-->
+                                        <!--<p class="value5">1,332</p>-->
+                                    <!--</div>-->
+                                    <div class="slide active" style="transform: translate(0%, 0%) translateZ(0px); transition-duration: 750ms; transition-property: transform; transition-timing-function: ease;">
+                                        <p id="main-dialect-prob" class="value5">20.1%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <h6 class="no-margin">Difference from second dialect</h6>
+                                <div class="live-tile carousel" data-mode="carousel" data-speed="750" data-delay="3000" data-height="24" style="height: 24px;">
+                                    <!--<div class="slide" style="transition-property: transform; transition-duration: 750ms; transition-timing-function: ease; transform: translate(0%, -100%) translateZ(0px);">-->
+                                        <!--<p class="value5">217</p>-->
+                                    <!--</div>-->
+                                    <div class="slide active" style="transform: translate(0%, 0%) translateZ(0px); transition-duration: 750ms; transition-property: transform; transition-timing-function: ease;">
+                                        <p id="main-dialect-diff" class="value5">65.3%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="widget" id="news-widget" data-widgster-load="demo/ajax/widgets/news.php">
+                    <header class="ui-sortable-handle">
+                        <h6>
+                            Microphone
+                            <!--<span class="label label-pill label-success">17</span>-->
+                        </h6>
+                        <span class="text-muted value stopwatch h2 stat-item"></span>
+                        <div class="widget-controls">
+                            <a data-widgster="expand" title="" href="#" style="display: none;"
+                               data-original-title="Expand"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a data-widgster="collapse" title="" href="#" data-original-title="Collapse"><i
+                                    class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a data-widgster="load" title="" href="#" data-original-title="I am spinning!"><i
+                                    class="fa fa-refresh"></i></a>
+                            <a data-widgster="close" title="" href="#" data-original-title="Close"><i
+                                    class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <!--<div class="bg-gray-lighter mt-md">-->
+                    <!--<progress class="progress progress-xs progress-bar-gray" value="100" max="100" style="width: 60%;"></progress>-->
+                    <!--</div>-->
+                    <!--<img id="volume" src="{% static 'did/img/volume-meter.png' %}" style="width:10%; " />-->
+                    <progress id="volume" max="100" value="0" class="html5">
+                        <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                        <div class="progress-bar">
+                            <span style="width: 80%">80%</span>
+                        </div>
+                    </progress>
+                    <div class="widget-body no-padding">
+                        <ul class="news-list stretchable">
+                            <li>
+                                <span id="fake-mic" class="icon bg-info text-white">
+                                    <i class="fa fa-microphone"></i>
+                                </span>
+                                <span class="">
+                                    <img id="micrecording" class="img-circle-lg"
+                                         src="{% static 'did/img/Mic-Animation.gif' %}" alt="..." style="display:none;">
+                                </span>
+                                <div class="news-item-info">
+                                    <h5 class="name no-margin mb-xs"><a href="#">ASR <strong>partial</strong> output</a>
+                                    </h5>
+                                    <!--<div class="subcontrol">-->
+                                    <!--<div id="volume-label-container"><span-->
+                                    <!--class="control-container-text"> Volume: </span></div>-->
+                                    <!--<div id="volume-container">-->
+                                    <!--<img src="{% static 'did/img/volume-meter.png' %}" />-->
+                                    <!--<div id="volume" style="margin-left: -99%;">-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+
+                                    <h4 id="asr-partial" class="text-right text-xs-center"
+                                        style="font-family: 'Cairo', sans-serif;display:none;">
+                                        <div class=" animated fadeIn handle ui-sortable-handle">
+                                                <span class="spinner">
+                                                    <i class="fa fa-spinner fa-spin"></i>
+                                                </span>
+                                        </div>
+                                    </h4>
+                                    <br/>
+                                    <div class="btn-toolbar">
+
+                                        <button id="start" class="btn btn-info btn-sm pull-xs-right"
+                                                onclick="start_listening();stopwatch.restart();toggleImage();"><span
+                                                class="glyphicon glyphicon-off"></span> Start
+                                            Talking
+                                        </button>
+                                        <button id="stop" class="btn btn-danger btn-sm pull-xs-right"
+                                                onclick="stop_listening();stopwatch.stop();toggleImage();"
+                                                style="display:none;"><span
+                                                class="glyphicon glyphicon-off"></span> Stop Talking
+                                        </button>
+                                    </div>
+                                    <!--<time class="help-block">Sep 25, 11:59</time>-->
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div id="news-close-modal" class="modal fade" tabindex="-1" role="dialog"
+                         aria-labelledby="news-close-modal-label" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                                    </button>
+                                    <h5 class="modal-title" id="news-close-modal-label">Sure?</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Do you really want to unrevertably remove this super news widget?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-danger" id="news-widget-remove">Yes, remove
+                                        widget
+                                    </button>
+                                </div>
+
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div>
+                </section>
+
+                <div class="form-group mb-0">
+                    <label class="sr-only" for="transcripts">ASR output</label>
+                    <textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="ASR output"
+                              rows="15" style="font-family: 'Cairo', sans-serif;"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-4">
                 <section class="widget bg-transparent">
                     <header>
@@ -777,7 +938,7 @@
                                 <h6 class="name m-t-1">Egyptian Dialect</h6>
                                 <!--<p class="description deemphasize">Some Cool Text</p>-->
                                 <div class="bg-white progress-bar">
-                                    <progress id="egy" class="progress progress-primary progress js-progress-animate"
+                                    <progress id="egy" class="progress progress-danger progress js-progress-animate"
                                               value="100" max="100" style="width: 0%" data-width="0%"></progress>
                                 </div>
                             </div>
@@ -874,153 +1035,7 @@
                         <!--</div>-->
                     </div>
                 </section>
-                <section class="widget" id="news-widget" data-widgster-load="demo/ajax/widgets/news.php">
-                    <header class="ui-sortable-handle">
-                        <h6>
-                            Microphone
-                            <!--<span class="label label-pill label-success">17</span>-->
-                        </h6>
-                        <span class="text-muted value stopwatch h2 stat-item"></span>
-                        <div class="widget-controls">
-                            <a data-widgster="expand" title="" href="#" style="display: none;"
-                               data-original-title="Expand"><i class="glyphicon glyphicon-chevron-up"></i></a>
-                            <a data-widgster="collapse" title="" href="#" data-original-title="Collapse"><i
-                                    class="glyphicon glyphicon-chevron-down"></i></a>
-                            <a data-widgster="load" title="" href="#" data-original-title="I am spinning!"><i
-                                    class="fa fa-refresh"></i></a>
-                            <a data-widgster="close" title="" href="#" data-original-title="Close"><i
-                                    class="glyphicon glyphicon-remove"></i></a>
-                        </div>
-                    </header>
-                    <!--<div class="bg-gray-lighter mt-md">-->
-                                    <!--<progress class="progress progress-xs progress-bar-gray" value="100" max="100" style="width: 60%;"></progress>-->
-                            <!--</div>-->
-                    <!--<img id="volume" src="{% static 'did/img/volume-meter.png' %}" style="width:10%; " />-->
-    <progress id="volume" max="100" value="0" class="html5">
-    <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
-			<div class="progress-bar">
-				<span style="width: 80%">80%</span>
-			</div>
-		</progress>
-                    <div class="widget-body no-padding">
-                        <ul class="news-list stretchable">
-                            <li>
-                                <span id="fake-mic" class="icon bg-info text-white">
-                                    <i class="fa fa-microphone"></i>
-                                </span>
-                                <span class="">
-                                    <img id="micrecording" class="img-circle-lg"
-                                         src="{% static 'did/img/Mic-Animation.gif' %}" alt="..." style="display:none;">
-                                </span>
-                                <div class="news-item-info">
-                                    <h5 class="name no-margin mb-xs"><a href="#">ASR <strong>partial</strong> output</a>
-                                    </h5>
-                                    <!--<div class="subcontrol">-->
-                                        <!--<div id="volume-label-container"><span-->
-                                                <!--class="control-container-text"> Volume: </span></div>-->
-                                        <!--<div id="volume-container">-->
-                                            <!--<img src="{% static 'did/img/volume-meter.png' %}" />-->
-                                            <!--<div id="volume" style="margin-left: -99%;">-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-                                    <h4 id="asr-partial" class="text-right text-xs-center" style="font-family: 'Cairo', sans-serif;display:none;">
-                                        <div class=" animated fadeIn handle ui-sortable-handle">
-                                                <span class="spinner">
-                                                    <i class="fa fa-spinner fa-spin"></i>
-                                                </span>
-                                        </div>
-                                    </h4>
-                                    <br/>
-                                    <div class="btn-toolbar">
-
-                                        <button id="start" class="btn btn-info btn-sm pull-xs-right"
-                                                onclick="start_listening();stopwatch.restart();toggleImage();"><span
-                                                class="glyphicon glyphicon-off"></span> Start
-                                            Talking
-                                        </button>
-                                        <button id="stop" class="btn btn-danger btn-sm pull-xs-right"
-                                                onclick="stop_listening();stopwatch.stop();toggleImage();"
-                                                style="display:none;"><span
-                                                class="glyphicon glyphicon-off"></span> Stop Talking
-                                        </button>
-                                    </div>
-                                    <!--<time class="help-block">Sep 25, 11:59</time>-->
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div id="news-close-modal" class="modal fade" tabindex="-1" role="dialog"
-                         aria-labelledby="news-close-modal-label" aria-hidden="true" style="display: none;">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
-                                    </button>
-                                    <h5 class="modal-title" id="news-close-modal-label">Sure?</h5>
-                                </div>
-                                <div class="modal-body">
-                                    Do you really want to unrevertably remove this super news widget?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                    <button type="button" class="btn btn-danger" id="news-widget-remove">Yes, remove
-                                        widget
-                                    </button>
-                                </div>
-
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div>
-                </section>
-
-                <div class="form-group mb-0">
-                    <label class="sr-only" for="transcripts">ASR output</label>
-                    <textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="ASR output"
-                              rows="8" style="font-family: 'Cairo', sans-serif;"></textarea>
-                </div>
             </div>
-        </div>
-        <div class="row">
-            <!--<div class="col-lg-4">-->
-            <!--<section class="widget">-->
-            <!--&lt;!&ndash; .widget>header is generally a place for widget title and widget controls. see .widget in _base.scss &ndash;&gt;-->
-            <!--<header>-->
-            <!--<h6>-->
-            <!--USERBASE GROWTH-->
-            <!--</h6>-->
-            <!--<div class="widget-controls">-->
-            <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
-            <!--<a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>-->
-            <!--</div>-->
-            <!--</header>-->
-            <!--<div class="widget-body">-->
-            <!--<div class="stats-row">-->
-            <!--<div class="stat-item">-->
-            <!--<h6 class="name fs-sm">Overall Growth</h6>-->
-            <!--<p class="value">76.38%</p>-->
-            <!--</div>-->
-            <!--<div class="stat-item">-->
-            <!--<h6 class="name fs-sm">Montly</h6>-->
-            <!--<p class="value">10.38%</p>-->
-            <!--</div>-->
-            <!--<div class="stat-item">-->
-            <!--<h6 class="name fs-sm">24h</h6>-->
-            <!--<p class="value">3.38%</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="bg-gray-lighter progress-bar">-->
-            <!--<progress class="progress progress-xs progress-success" value="100" max="100" style="width: 60%"></progress>-->
-            <!--</div>-->
-            <!--<p>-->
-            <!--<small><span class="circle bg-warning"><i class="glyphicon glyphicon-chevron-up"></i></span></small>-->
-            <!--<span class="fw-semi-bold">17% higher</span>-->
-            <!--than last month</p>-->
-            <!--</div>-->
-            <!--</section>-->
-            <!--</div>-->
             <!--<div class="col-lg-4">-->
             <!--<section class="widget">-->
             <!--<header>-->

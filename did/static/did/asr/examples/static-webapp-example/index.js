@@ -2,11 +2,12 @@
 //var ASR_SERVER = "asr.qcri.org:7778";
 //var ASR_SERVER = "qatslive4520.cloudapp.net:8888";
 //var ASR_SERVER = "localhost:8888";
-var ASR_SERVER = "dialectid.xyz:8888";
+// var ASR_SERVER = "dialectid.xyz:8888";
+var ASR_SERVER = "dialectid.qcri.org:8888";
 var MIN_VOL = -100;
 var MAX_VOL = -50;
 //var ASR_SERVER = "icassp-demo-2018.qcri.org:8888";
-
+var dialectHistory = [];
 
 function __serverStatus(msg) {
     console.log("[STATUS]");
@@ -84,11 +85,25 @@ var dictate = new Dictate({
 
         var countriesOfDialect = {
             "EGY": ["eg"],
-            "MSA": ["sd"],
+            "MSA": [""],
             "GLF": ["sa", "qa", "om", "kw", "ae"],
             "NOR": ["eh", "ma", "dz", "tn", "ly"],
             "LAV": ["sy", "jo", "ps", "lb"]
         };
+
+        var DialectLabels = {
+            "EGY": "Egyptain dialect",
+            "MSA": "Modern Standard Arabic (MSA)",
+            "GLF": "Gulf dialect",
+            "NOR": "Moroccan dialect",
+            "LAV": "Levantine dialect"
+        };
+
+        dialectHistory.push(sortable[0][0]);
+        console.log("##########"+dialectHistory+"##########");
+
+
+
         $("#"+sortable[0][0].toLowerCase()).css("width", parseFloat(sortable[0][1])*100+"%");
         $("#"+sortable[1][0].toLowerCase()).css("width", parseFloat(sortable[1][1])*100+"%");
         $("#"+sortable[2][0].toLowerCase()).css("width", parseFloat(sortable[2][1])*100+"%");
@@ -100,6 +115,10 @@ var dictate = new Dictate({
         $("#percent-"+sortable[2][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[2][1])*100));
         $("#percent-"+sortable[3][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[3][1])*100));
         $("#percent-"+sortable[4][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[4][1])*100));
+
+        $("#main-dialect").text(DialectLabels[sortable[0][0]]);
+        $("#main-dialect-prob").text(Math.ceil(parseFloat(sortable[0][1])*100)+"%");
+        $("#main-dialect-diff").text(Math.ceil(parseFloat(sortable[0][1])*100)-Math.ceil(parseFloat(sortable[1][1])*100)+"%");
 
         var $map = $('#map');
 
