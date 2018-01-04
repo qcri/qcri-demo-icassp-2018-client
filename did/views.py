@@ -8,12 +8,12 @@ from django.http import HttpResponse
 
 def index(request):
     # question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'did/index_1.html', {'data': 55})
+    return render(request, 'did/index.html', {'data': 55})
 
 
 def icassp_demo_index(request):
     # question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'did/index.html', {'data': 55})
+    return render(request, 'did/index_1.html', {'data': 55})
 
 # IMPORTANT NOTES:
 #  - Congratulations! Your certificate and chain have been saved at:
