@@ -16,6 +16,14 @@ function __serverStatus(msg) {
 
 // Private methods (called from the callbacks)
 function __message(code, data) {
+    if(data) {
+
+
+        var myobj = JSON.parse(data);
+        alert(data["status"])
+        // if(data["status"]== 9)
+        // alert("No decoder available, try again later");
+    }
     console.log("[msg]: " + code + ": " + (data || ''));
 }
 
@@ -44,12 +52,15 @@ var dictate = new Dictate({
         __status("");
     },
     onServerStatus: function (json) {
+        // if(json.num_workers_available == 0){
+        //     alert("No workers");
+        // }
 
         __serverStatus(json.num_workers_available + ':disooqi:' + json.num_requests_processed);
     },
     onPartialResults: function (hypos, segmentid) {
         console.log("[PARTIAL] " + hypos[0]['transcript']);
-        document.getElementById("asr-partial").innerHTML =  hypos[0]['transcript'];
+        document.getElementById("asr-partial").innerHTML = hypos[0]['transcript'];
     },
     onResults: function (hypos, segmentid) {
         console.log("[FINAL] " + hypos[0]['transcript']);
@@ -86,6 +97,7 @@ var dictate = new Dictate({
         var countriesOfDialect = {
             "EGY": ["eg"],
             "MSA": [""],
+            //"eg","sa", "qa", "om", "kw", "ae","eh", "ma", "dz", "tn", "ly","sy", "jo", "ps", "lb","sd","ye", "iq", "mr", "so", "xs", "dj"
             "GLF": ["sa", "qa", "om", "kw", "ae"],
             "NOR": ["eh", "ma", "dz", "tn", "ly"],
             "LAV": ["sy", "jo", "ps", "lb"]
@@ -100,35 +112,97 @@ var dictate = new Dictate({
         };
 
         dialectHistory.push(sortable[0][0]);
-        console.log("##########"+dialectHistory+"##########");
+
+        var dialectFreq = (function () {
+
+            /* Below is a regular expression that finds alphanumeric characters
+               Next is a string that could easily be replaced with a reference to a form control
+               Lastly, we have an array that will hold any words matching our pattern */
+            // var pattern = /\w+/g,
+            //     string = "I I am am am yes yes.",
+            //     matchedWords = string.match( pattern );
+
+            /* The Array.prototype.reduce method assists us in producing a single value from an
+               array. In this case, we're going to use it to output an object with results. */
+            var counts = dialectHistory.reduce(function (stats, word) {
+
+                /* `stats` is the object that we'll be building up over time.
+                   `word` is each individual entry in the `dialectHistory` array */
+                if (stats.hasOwnProperty(word)) {
+                    /* `stats` already has an entry for the current `word`.
+                       As a result, let's increment the count for that `word`. */
+                    stats[word] = stats[word] + 1;
+                } else {
+                    /* `stats` does not yet have an entry for the current `word`.
+                       As a result, let's add a new entry, and set count to 1. */
+                    stats[word] = 1;
+                }
+
+                /* Because we are building up `stats` over numerous iterations,
+                   we need to return it for the next pass to modify it. */
+                return stats;
+
+            }, {});
+
+            /* Now that `counts` has our object, we can log it. */
+            console.log(counts);
+            return counts;
+
+        }());
+
+        var max_freq = 0;
+        var dialectWithHighestFreq = "";
+        Object.keys(dialectFreq).forEach(function(key, index) {
+            console.log(key, dialectFreq[key]);
+            if(dialectFreq[key] > max_freq) {
+                max_freq = dialectFreq[key];
+                dialectWithHighestFreq = key;
+            }
+
+            // key: the name of the object key
+            // index: the ordinal position of the key within the object
+        });
+
+        var probabilityOfMainDialect = max_freq/dialectHistory.length*100;
+
+        console.log("The main dialect is mostly: "+ dialectWithHighestFreq+", with a probability of: "+probabilityOfMainDialect+"%");
+
+        $("#main-dialect").text(dialectWithHighestFreq);
+        $("#main-dialect-prob").text(Math.ceil(probabilityOfMainDialect) + "%");
+        // $("#main-dialect-diff").text(Math.ceil(probabilityOfMainDialect - parseFloat(sortable[1][1]) * 100) + "%");
 
 
+        $("#" + sortable[0][0].toLowerCase()).css("width", parseFloat(sortable[0][1]) * 100 + "%");
+        $("#" + sortable[1][0].toLowerCase()).css("width", parseFloat(sortable[1][1]) * 100 + "%");
+        $("#" + sortable[2][0].toLowerCase()).css("width", parseFloat(sortable[2][1]) * 100 + "%");
+        $("#" + sortable[3][0].toLowerCase()).css("width", parseFloat(sortable[3][1]) * 100 + "%");
+        $("#" + sortable[4][0].toLowerCase()).css("width", parseFloat(sortable[4][1]) * 100 + "%");//percent-egy
 
-        $("#"+sortable[0][0].toLowerCase()).css("width", parseFloat(sortable[0][1])*100+"%");
-        $("#"+sortable[1][0].toLowerCase()).css("width", parseFloat(sortable[1][1])*100+"%");
-        $("#"+sortable[2][0].toLowerCase()).css("width", parseFloat(sortable[2][1])*100+"%");
-        $("#"+sortable[3][0].toLowerCase()).css("width", parseFloat(sortable[3][1])*100+"%");
-        $("#"+sortable[4][0].toLowerCase()).css("width", parseFloat(sortable[4][1])*100+"%");//percent-egy
+        $("#percent-" + sortable[0][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[0][1]) * 100));
+        $("#percent-" + sortable[1][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[1][1]) * 100));
+        $("#percent-" + sortable[2][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[2][1]) * 100));
+        $("#percent-" + sortable[3][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[3][1]) * 100));
+        $("#percent-" + sortable[4][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[4][1]) * 100));
 
-        $("#percent-"+sortable[0][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[0][1])*100));
-        $("#percent-"+sortable[1][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[1][1])*100));
-        $("#percent-"+sortable[2][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[2][1])*100));
-        $("#percent-"+sortable[3][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[3][1])*100));
-        $("#percent-"+sortable[4][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[4][1])*100));
 
-        $("#main-dialect").text(DialectLabels[sortable[0][0]]);
-        $("#main-dialect-prob").text(Math.ceil(parseFloat(sortable[0][1])*100)+"%");
-        $("#main-dialect-diff").text(Math.ceil(parseFloat(sortable[0][1])*100)-Math.ceil(parseFloat(sortable[1][1])*100)+"%");
 
         var $map = $('#map');
 
         Object.keys($map.data("mapael").areas).forEach(function (key, index) {
             // console.log(sortable[0][0]);
             if (countriesOfDialect[sortable[0][0]].indexOf(key) > -1) {
-
-                updatedOptions.areas[key] = {
-                    attrs: {
-                        fill: "#f38a03"
+                //
+                if(sortable[0][0] == "MSA"){
+                    updatedOptions.areas[key] = {
+                        attrs: {
+                            fill: "#4d9c58"
+                        }
+                    }
+                } else {
+                    updatedOptions.areas[key] = {
+                        attrs: {
+                            fill: "#f38a03"
+                        }
                     }
                 };
             } else if (countriesOfDialect[sortable[1][0]].indexOf(key) > -1) {
@@ -203,38 +277,38 @@ var dictate = new Dictate({
     onEvent: function (code, data) {
         __message(code, data);
     },
-	audioProcessor : function() {
-		var array =  new Float32Array(window.userSpeechAnalyser.frequencyBinCount);
-		window.userSpeechAnalyser.getFloatFrequencyData(array);
-		var values = 0;
-		var average;
+    audioProcessor: function () {
+        var array = new Float32Array(window.userSpeechAnalyser.frequencyBinCount);
+        window.userSpeechAnalyser.getFloatFrequencyData(array);
+        var values = 0;
+        var average;
 
-		var length = array.length;
+        var length = array.length;
 
-		// get all the frequency amplitudes
-		for (var i = 0; i < length; i++) {
-			values += array[i];
-		}
+        // get all the frequency amplitudes
+        for (var i = 0; i < length; i++) {
+            values += array[i];
+        }
 
-		average = values / length;
+        average = values / length;
 
-		// if(DEBUG) console.log("[VOL] " + average);
+        // if(DEBUG) console.log("[VOL] " + average);
 
-		// Perform clipping
-		if (average < MIN_VOL)
-			average = MIN_VOL;
-		if (average > MAX_VOL)
-			average = MAX_VOL;
+        // Perform clipping
+        if (average < MIN_VOL)
+            average = MIN_VOL;
+        if (average > MAX_VOL)
+            average = MAX_VOL;
 
-		average += 100;
-		average *= 100 / (MAX_VOL-MIN_VOL);
-		if (average == 100)
-			average = 99;
+        average += 100;
+        average *= 100 / (MAX_VOL - MIN_VOL);
+        if (average == 100)
+            average = 99;
 
-		if(DEBUG) console.log("[VOL-CORRECTED] " + average);
+        // if(DEBUG) console.log("[VOL-CORRECTED] " + average);
         $("#volume").prop('value', average);
-		// $("#volume").css("margin-left", "-" + (99 - average) + "%");
-	}
+        // $("#volume").css("margin-left", "-" + (99 - average) + "%");
+    }
 });
 
 window.onload = function () {
