@@ -9,20 +9,29 @@ var MAX_VOL = -50;
 //var ASR_SERVER = "icassp-demo-2018.qcri.org:8888";
 var dialectHistory = [];
 
+var num_workers_available =0;
+
+function toggleImage() {
+    $("#micrecording").toggle();
+    $("#fake-mic").toggle();
+    $("#asr-partial").toggle();
+    $("#start").toggle();
+    $("#stop").toggle();
+}
+
 function __serverStatus(msg) {
+    //TODO: We send notification of server status from here
     console.log("[STATUS]");
     console.log(msg);
 }
 
 // Private methods (called from the callbacks)
 function __message(code, data) {
-    if(data) {
-
-
+    if(code==8) {
         var myobj = JSON.parse(data);
-        alert(data["status"])
-        // if(data["status"]== 9)
-        // alert("No decoder available, try again later");
+    //     alert(data["status"])
+        if(data["status"]== 9)
+        alert("No decoder available, try again later");
     }
     console.log("[msg]: " + code + ": " + (data || ''));
 }
@@ -50,13 +59,15 @@ var dictate = new Dictate({
     onEndOfSession: function () {
         __message("END OF SESSION");
         __status("");
+        toggleImage();
+        stopwatch.stop();
     },
     onServerStatus: function (json) {
         // if(json.num_workers_available == 0){
         //     alert("No workers");
         // }
-
-        __serverStatus(json.num_workers_available + ':disooqi:' + json.num_requests_processed);
+        num_workers_available = json.num_workers_available;
+        __serverStatus(json.num_workers_available + ':' + json.num_requests_processed);
     },
     onPartialResults: function (hypos, segmentid) {
         console.log("[PARTIAL] " + hypos[0]['transcript']);
@@ -317,10 +328,26 @@ window.onload = function () {
     dictate.init();
 };
 
+
+
 function start_listening() {
+    console.log("################################################");
+    console.log("############# Start Button Pressed #############");
+    console.log("################################################");
+
+    if(num_workers_available<1) {
+        alert("Sorry! server is busy (0 workers) .. max workers has been reached  .. Please check in few minutes :)");
+
+    }else{
+        toggleImage();
+        stopwatch.restart();
+    }
+
     dictate.startListening();
 }
 
 function stop_listening() {
     dictate.stopListening();
+
+
 }
