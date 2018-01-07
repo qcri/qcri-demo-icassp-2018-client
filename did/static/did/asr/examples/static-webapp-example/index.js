@@ -9,7 +9,8 @@ var MAX_VOL = -50;
 //var ASR_SERVER = "icassp-demo-2018.qcri.org:8888";
 var dialectHistory = [];
 
-var num_workers_available =0;
+var num_workers_available = 0;
+var isAllowToggle = false;
 
 function toggleImage() {
     $("#micrecording").toggle();
@@ -27,12 +28,12 @@ function __serverStatus(msg) {
 
 // Private methods (called from the callbacks)
 function __message(code, data) {
-    if(code==8) {
-        var myobj = JSON.parse(data);
-    //     alert(data["status"])
-        if(data["status"]== 9)
-        alert("No decoder available, try again later");
-    }
+    // if(code==8) {
+    //     var myobj = JSON.parse(data);
+    // //     alert(data["status"])
+    //     if(data["status"]== 9)
+    //     alert("No decoder available, try again later");
+    // }
     console.log("[msg]: " + code + ": " + (data || ''));
 }
 
@@ -51,6 +52,10 @@ var dictate = new Dictate({
     onReadyForSpeech: function () {
         __message("READY FOR SPEECH");
         __status("Kuulan ja transkribeerin...");
+        if (isAllowToggle) {
+            toggleImage();
+            stopwatch.restart();
+        }
     },
     onEndOfSpeech: function () {
         __message("END OF SPEECH");
@@ -59,8 +64,11 @@ var dictate = new Dictate({
     onEndOfSession: function () {
         __message("END OF SESSION");
         __status("");
-        toggleImage();
-        stopwatch.stop();
+        if (isAllowToggle) {
+            toggleImage();
+            stopwatch.stop();
+
+        }
     },
     onServerStatus: function (json) {
         // if(json.num_workers_available == 0){
@@ -163,9 +171,9 @@ var dictate = new Dictate({
 
         var max_freq = 0;
         var dialectWithHighestFreq = "";
-        Object.keys(dialectFreq).forEach(function(key, index) {
+        Object.keys(dialectFreq).forEach(function (key, index) {
             console.log(key, dialectFreq[key]);
-            if(dialectFreq[key] > max_freq) {
+            if (dialectFreq[key] > max_freq) {
                 max_freq = dialectFreq[key];
                 dialectWithHighestFreq = key;
             }
@@ -174,9 +182,9 @@ var dictate = new Dictate({
             // index: the ordinal position of the key within the object
         });
 
-        var probabilityOfMainDialect = max_freq/dialectHistory.length*100;
+        var probabilityOfMainDialect = max_freq / dialectHistory.length * 100;
 
-        console.log("The main dialect is mostly: "+ dialectWithHighestFreq+", with a probability of: "+probabilityOfMainDialect+"%");
+        console.log("The main dialect is mostly: " + dialectWithHighestFreq + ", with a probability of: " + probabilityOfMainDialect + "%");
 
         $("#main-dialect").text(dialectWithHighestFreq);
         $("#main-dialect-prob").text(Math.ceil(probabilityOfMainDialect) + "%");
@@ -196,14 +204,13 @@ var dictate = new Dictate({
         $("#percent-" + sortable[4][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[4][1]) * 100));
 
 
-
         var $map = $('#map');
 
         Object.keys($map.data("mapael").areas).forEach(function (key, index) {
             // console.log(sortable[0][0]);
             if (countriesOfDialect[sortable[0][0]].indexOf(key) > -1) {
                 //
-                if(sortable[0][0] == "MSA"){
+                if (sortable[0][0] == "MSA") {
                     updatedOptions.areas[key] = {
                         attrs: {
                             fill: "#4d9c58"
@@ -215,7 +222,8 @@ var dictate = new Dictate({
                             fill: "#f38a03"
                         }
                     }
-                };
+                }
+                ;
             } else if (countriesOfDialect[sortable[1][0]].indexOf(key) > -1) {
                 // $("#egy").css("width", parseFloat(sortable[1][1])*100+"%");
                 updatedOptions.areas[key] = {
@@ -329,24 +337,26 @@ window.onload = function () {
 };
 
 
-
 function start_listening() {
     console.log("################################################");
     console.log("############# Start Button Pressed #############");
     console.log("################################################");
 
-    if(num_workers_available<1) {
+    if (num_workers_available < 1) {
         alert("Sorry! server is busy (0 workers) .. max workers has been reached  .. Please check in few minutes :)");
+        isAllowToggle = false;
 
-    }else{
-        toggleImage();
-        stopwatch.restart();
+    } else {
+        isAllowToggle = true;
     }
 
     dictate.startListening();
 }
 
 function stop_listening() {
+    console.log("################################################");
+    console.log("############# Stop Button Pressed #############");
+    console.log("################################################");
     dictate.stopListening();
 
 
