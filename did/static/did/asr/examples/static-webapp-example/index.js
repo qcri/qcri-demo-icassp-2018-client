@@ -186,7 +186,7 @@ var dictate = new Dictate({
 
         console.log("The main dialect is mostly: " + dialectWithHighestFreq + ", with a probability of: " + probabilityOfMainDialect + "%");
 
-        $("#main-dialect").text(dialectWithHighestFreq);
+        $("#main-dialect").text(DialectLabels[dialectWithHighestFreq]);
         $("#main-dialect-prob").text(Math.ceil(probabilityOfMainDialect) + "%");
         // $("#main-dialect-diff").text(Math.ceil(probabilityOfMainDialect - parseFloat(sortable[1][1]) * 100) + "%");
 
