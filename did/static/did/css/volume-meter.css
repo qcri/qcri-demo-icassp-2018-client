@@ -49,10 +49,10 @@ progress[value]#volume {
 	border: none;
 
 	/* Add dimensions */
-	width: 112%; height: 7px;
+	width: 109%; height: 7px;
 
 	/* Although firefox doesn't provide any additional pseudo class to style the progress element container, any style applied here works on the container. */
-	  background-color: whiteSmoke;
+	  background-color: white;
 	  border-radius: 0px;
 	  box-shadow: 0 0px 0px rgba(0,0,0,0) inset;
 
@@ -62,6 +62,7 @@ progress[value]#volume {
 	position: relative;
 	margin: 0 -20px 0em;
 }
+
 
 /*
 Webkit browsers provide two pseudo classes that can be use to style HTML5 progress element.
