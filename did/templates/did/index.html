@@ -773,7 +773,7 @@
                 bg-primary, bg-white -->
                 <section class="widget bg-transparent">
                     <!-- .widget-body is a mostly semantic class. may be a sibling to .widget>header or .widget>footer -->
-                    <div class=" widget-body">
+                    <div class="widget-image widget-body">
                         <div id="map" class=" mapael">
                             <!--<div class="stats">-->
                             <!--<h6 class="text-white m-t-1">GEO-LOCATIONS</h6>-->
@@ -787,7 +787,71 @@
 
 
                         </div>
-                        
+                        <!--<h4 class="title">-->
+                            <!--<span class="fw-normal">Sunnyvale</span>, CA-->
+                        <!--</h4>-->
+                        <div class="forecast title">
+                            <div class="row" >
+                                <!--<div class="col-xs-6 col-md-4">-->
+                                    <!--<div class="row mt-xs">-->
+                                        <!--<div class="col-xs-6 no-padding">-->
+                                            <!--<canvas id="clear-day" width="40" height="40"></canvas>-->
+                                            <!--<p class="no-margin fw-normal mt-n-xs">sunny</p>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-xs-6 no-padding">-->
+                                            <!--<h6 class="fw-semi-bold no-margin">SUNDAY</h6>-->
+                                            <!--<p class="value2 ">29°</p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="col-xs-3 col-md-2 " >
+                                    <div class="clearfix fs-mini mt">
+                                        <span class="pull-xs-right no-margin fw-semi-bold">Egyptian</span>
+                                        <span class="fs-mini pull-xs-left"><span id="percent-egy">0</span>%</span>
+                                    </div>
+                                    <div class="bg-white progress-bar">
+                                        <progress id="egy" background-color="white"  class="progress progress-danger progress-xs" value="100" max="100" style="width: 0%; border: 0px solid red;background-color: #00ff00;"></progress>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 col-md-2 " >
+                                    <div class="clearfix fs-mini mt">
+                                        <span class="pull-xs-right no-margin fw-semi-bold">Moroccan</span>
+                                        <span class="fs-mini pull-xs-left"><span id="percent-nor">0</span>%</span>
+                                    </div>
+                                    <div class="bg-white progress-bar">
+                                        <progress id="nor" class="progress progress-danger progress-xs" value="100" max="100" style="width: 0%;border: 0px solid red;"></progress>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 col-md-2 " >
+                                    <div class="clearfix fs-mini mt">
+                                        <span class="pull-xs-right no-margin fw-semi-bold">Gulf</span>
+                                        <span class="fs-mini pull-xs-left"><span id="percent-glf">0</span>%</span>
+                                    </div>
+                                    <div class="bg-white progress-bar">
+                                        <progress id="glf" class="progress progress-danger progress-xs" value="100" max="100" style="width: 0%;border: 0px solid red;"></progress>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 col-md-2 " >
+                                    <div class="clearfix fs-mini mt">
+                                        <span class="pull-xs-right no-margin fw-semi-bold">Levantine</span>
+                                        <span class="fs-mini pull-xs-left"><span id="percent-lav">0</span>%</span>
+                                    </div>
+                                    <div class="bg-white progress-bar">
+                                        <progress id="lav" class="progress progress-danger progress-xs" value="100" max="100" style="width: 0%;border: 0px solid red;"></progress>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 col-md-2 " >
+                                    <div class="clearfix fs-mini mt">
+                                        <span class="pull-xs-right no-margin fw-semi-bold">MSA</span>
+                                        <span class="fs-mini pull-xs-left"><span id="percent-msa">0</span>%</span>
+                                    </div>
+                                    <div class="bg-white progress-bar">
+                                        <progress id="msa" class="progress progress-danger progress-xs" value="100" max="100" style="width: 0%;border: 0px solid red;"></progress>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
             </div>
@@ -981,13 +1045,13 @@
                                 <h6 class="name m-t-1">Egyptian Dialect</h6>
                                 <!--<p class="description deemphasize">Some Cool Text</p>-->
                                 <div class="bg-white progress-bar">
-                                    <progress id="egy" class="progress progress-danger progress js-progress-animate"
+                                    <progress id="egyx" class="progress progress-danger progress js-progress-animate"
                                               value="100" max="100" style="width: 0%" data-width="0%"></progress>
                                 </div>
                             </div>
                             <div class="col-md-3 text-xs-center">
                                 <span class="status rounded rounded-lg bg-body-light">
-                                    <small><span id="percent-egy">0</span>%</small>
+                                    <small><span id="percent-egyx">0</span>%</small>
                                 </span>
                             </div>
                         </div>
@@ -996,13 +1060,13 @@
                                 <h6 class="name m-t-1">Moroccan Dialect</h6>
                                 <!--<p class="description deemphasize">P. to C. Conversion</p>-->
                                 <div class="bg-white progress-bar">
-                                    <progress id="nor" class="progress progress progress-danger js-progress-animate"
+                                    <progress id="norx" class="progress progress progress-danger js-progress-animate"
                                               value="100" max="100" style="width: 0%" data-width="0%"></progress>
                                 </div>
                             </div>
                             <div class="col-md-3 text-xs-center">
                                 <span class="status rounded rounded-lg bg-body-light">
-                                    <small><span id="percent-nor">0</span>%</small>
+                                    <small><span id="percent-norx">0</span>%</small>
                                 </span>
                             </div>
                         </div>
@@ -1011,13 +1075,13 @@
                                 <h6 class="name m-t-1">Gulf Dialect</h6>
                                 <!--<p class="description deemphasize">P. to C. Conversion</p>-->
                                 <div class="bg-white progress-bar">
-                                    <progress id="glf" class="progress progress progress-danger js-progress-animate"
+                                    <progress id="glfx" class="progress progress progress-danger js-progress-animate"
                                               value="100" max="100" style="width: 0%" data-width="0%"></progress>
                                 </div>
                             </div>
                             <div class="col-md-3 text-xs-center">
                                 <span class="status rounded rounded-lg bg-body-light">
-                                    <small><span id="percent-glf">0</span>%</small>
+                                    <small><span id="percent-glfx">0</span>%</small>
                                 </span>
                             </div>
                         </div>
@@ -1026,13 +1090,13 @@
                                 <h6 class="name m-t-1">Levantine Dialect</h6>
                                 <!--<p class="description deemphasize">P. to C. Conversion</p>-->
                                 <div class="bg-white progress-bar">
-                                    <progress id="lav" class="progress progress progress-danger js-progress-animate"
+                                    <progress id="lavx" class="progress progress progress-danger js-progress-animate"
                                               value="100" max="100" style="width: 0%" data-width="0%"></progress>
                                 </div>
                             </div>
                             <div class="col-md-3 text-xs-center">
                                 <span class="status rounded rounded-lg bg-body-light">
-                                    <small><span id="percent-lav">0</span>%</small>
+                                    <small><span id="percent-lavx">0</span>%</small>
                                 </span>
                             </div>
                         </div>
@@ -1041,13 +1105,13 @@
                                 <h6 class="name m-t-1">Modern Standard Arabic (MSA)</h6>
                                 <!--<p class="description deemphasize">Average Bitrate</p>-->
                                 <div class="bg-white progress-bar">
-                                    <progress id="msa" class="progress progress-lg progress-success js-progress-animate"
+                                    <progress id="msax" class="progress progress-lg progress-success js-progress-animate"
                                               value="100" max="100" style="width: 0%" data-width="0%"></progress>
                                 </div>
                             </div>
                             <div class="col-md-3 text-xs-center">
                                 <span class="status rounded rounded-lg bg-body-light">
-                                    <small><span id="percent-msa">0</span>%</small>
+                                    <small><span id="percent-msax">0</span>%</small>
                                 </span>
                             </div>
                         </div>
