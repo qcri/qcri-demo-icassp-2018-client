@@ -345,7 +345,7 @@
                 </span>
                 </li>
                 <!--<li class="nav-item thumb-xlg  pull-xs-left">-->
-                    <!--<img class="img-circle-lg" src="{% static 'did/img/live-online.gif' %}" alt="...">-->
+                <!--<img class="img-circle-lg" src="{% static 'did/img/live-online.gif' %}" alt="...">-->
                 <!--</li>-->
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -783,6 +783,7 @@
                             <!--<h6 class="text-white m-t-1">GEO-LOCATIONS</h6>-->
                             <!--<p class="h3 text-warning no-margin"><strong id="geo-locations-number">1 656 843</strong> <i class="fa fa-map-marker"></i></p>-->
                             <!--</div>-->
+                            <br/><br/>
                             <div class="map">
                                 <span>Alternative content for the map</span>
                             </div>
@@ -794,6 +795,7 @@
                         <!--</h4>-->
                         <div class="forecast title">
                             <div class="row">
+                                <br/>
                                 <!--<div class="col-xs-6 col-md-4">-->
                                 <!--<div class="row mt-xs">-->
                                 <!--<div class="col-xs-6 no-padding">-->
@@ -997,162 +999,156 @@
 
                         </ul>
                     </div>
-                    <div id="news-close-modal" class="modal fade" tabindex="-1" role="dialog"
-                         aria-labelledby="news-close-modal-label" aria-hidden="true" style="display: none;">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
-                                    </button>
-                                    <h5 class="modal-title" id="news-close-modal-label">Sure?</h5>
-                                </div>
-                                <div class="modal-body">
-                                    Do you really want to unrevertably remove this super news widget?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                    <button type="button" class="btn btn-danger" id="news-widget-remove">Yes, remove
-                                        widget
-                                    </button>
-                                </div>
+                    <!--<div id="news-close-modal" class="modal fade" tabindex="-1" role="dialog"-->
+                    <!--aria-labelledby="news-close-modal-label" aria-hidden="true" style="display: none;">-->
+                    <!--<div class="modal-dialog">-->
+                    <!--<div class="modal-content">-->
+                    <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×-->
+                    <!--</button>-->
+                    <!--<h5 class="modal-title" id="news-close-modal-label">Sure?</h5>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                    <!--Do you really want to unrevertably remove this super news widget?-->
+                    <!--</div>-->
+                    <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>-->
+                    <!--<button type="button" class="btn btn-danger" id="news-widget-remove">Yes, remove-->
+                    <!--widget-->
+                    <!--</button>-->
+                    <!--</div>-->
 
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div>
+                    <!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+                    <!--</div>&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+                    <!--</div>-->
                 </section>
-
-                <div class="form-group mb-0">
-                    <label class="sr-only" for="transcripts">ASR output</label>
-                    <textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="ASR output"
-                              rows="15" style="font-family: 'Cairo', sans-serif;"></textarea>
-                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2">
-                <!--<section class="widget bg-transparent">-->
-                    <!--<header>-->
-                        <!--<h5>-->
-                            <!--Map-->
-                            <!--<span class="fw-semi-bold">Arabic Dialects</span>-->
-                        <!--</h5>-->
-                        <!--<div class="widget-controls widget-controls-hover">-->
-                            <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
-                            <!--<a href="#"><i class="fa fa-refresh"></i></a>-->
-                            <!--<a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>-->
-                        <!--</div>-->
-                    <!--</header>-->
-                    <!--<div class="widget-body">-->
-                        <!--&lt;!&ndash;<p>Status: <strong>Live</strong></p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<span class="circle bg-warning"><i class="fa fa-map-marker"></i></span>&ndash;&gt;-->
-                        <!--&lt;!&ndash;146 Countries, 2759 Cities&ndash;&gt;-->
-                        <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                        <!--<div class="row progress-stats">-->
-                            <!--<div class="col-md-9">-->
-                                <!--<h6 class="name m-t-1">Egyptian Dialect</h6>-->
-                                <!--&lt;!&ndash;<p class="description deemphasize">Some Cool Text</p>&ndash;&gt;-->
-                                <!--<div class="bg-white progress-bar">-->
-                                    <!--<progress id="egyx" class="progress progress-danger progress js-progress-animate"-->
-                                              <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="col-md-3 text-xs-center">-->
-                                <!--<span class="status rounded rounded-lg bg-body-light">-->
-                                    <!--<small><span id="percent-egyx">0</span>%</small>-->
-                                <!--</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row progress-stats">-->
-                            <!--<div class="col-md-9">-->
-                                <!--<h6 class="name m-t-1">Moroccan Dialect</h6>-->
-                                <!--&lt;!&ndash;<p class="description deemphasize">P. to C. Conversion</p>&ndash;&gt;-->
-                                <!--<div class="bg-white progress-bar">-->
-                                    <!--<progress id="norx" class="progress progress progress-danger js-progress-animate"-->
-                                              <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="col-md-3 text-xs-center">-->
-                                <!--<span class="status rounded rounded-lg bg-body-light">-->
-                                    <!--<small><span id="percent-norx">0</span>%</small>-->
-                                <!--</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row progress-stats">-->
-                            <!--<div class="col-md-9">-->
-                                <!--<h6 class="name m-t-1">Gulf Dialect</h6>-->
-                                <!--&lt;!&ndash;<p class="description deemphasize">P. to C. Conversion</p>&ndash;&gt;-->
-                                <!--<div class="bg-white progress-bar">-->
-                                    <!--<progress id="glfx" class="progress progress progress-danger js-progress-animate"-->
-                                              <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="col-md-3 text-xs-center">-->
-                                <!--<span class="status rounded rounded-lg bg-body-light">-->
-                                    <!--<small><span id="percent-glfx">0</span>%</small>-->
-                                <!--</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row progress-stats">-->
-                            <!--<div class="col-md-9">-->
-                                <!--<h6 class="name m-t-1">Levantine Dialect</h6>-->
-                                <!--&lt;!&ndash;<p class="description deemphasize">P. to C. Conversion</p>&ndash;&gt;-->
-                                <!--<div class="bg-white progress-bar">-->
-                                    <!--<progress id="lavx" class="progress progress progress-danger js-progress-animate"-->
-                                              <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="col-md-3 text-xs-center">-->
-                                <!--<span class="status rounded rounded-lg bg-body-light">-->
-                                    <!--<small><span id="percent-lavx">0</span>%</small>-->
-                                <!--</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row progress-stats">-->
-                            <!--<div class="col-md-9">-->
-                                <!--<h6 class="name m-t-1">Modern Standard Arabic (MSA)</h6>-->
-                                <!--&lt;!&ndash;<p class="description deemphasize">Average Bitrate</p>&ndash;&gt;-->
-                                <!--<div class="bg-white progress-bar">-->
-                                    <!--<progress id="msax"-->
-                                              <!--class="progress progress-lg progress-success js-progress-animate"-->
-                                              <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="col-md-3 text-xs-center">-->
-                                <!--<span class="status rounded rounded-lg bg-body-light">-->
-                                    <!--<small><span id="percent-msax">0</span>%</small>-->
-                                <!--</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;<p>Tracking: <strong>Active</strong></p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<span class="circle bg-warning"><i class="fa fa-cog"></i></span>&ndash;&gt;-->
-                        <!--&lt;!&ndash;391 elements installed, 84 sets&ndash;&gt;-->
-                        <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div class="input-group mt">&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<input type="text" class="form-control" placeholder="Search Map">&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<span class="input-group-btn">&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<button type="submit" class="btn btn-default">&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<i class="fa fa-search text-gray"></i>&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;</button>&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;</span>&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;<p>ASR Output:</p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<pre><code>Messenger().post({&ndash;&gt;-->
-                        <!--&lt;!&ndash;message: 'There was an explosion while processing your request.',&ndash;&gt;-->
-                        <!--&lt;!&ndash;type: 'error',&ndash;&gt;-->
-                        <!--&lt;!&ndash;showCloseButton: true&ndash;&gt;-->
-                        <!--&lt;!&ndash;});</code></pre>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <div class="col-lg-4">
+                <section class="widget bg-transparent">
+                <header>
+                <h5>
+
+                <span class="fw-semi-bold"></span>
+                </h5>
+                <div class="widget-controls widget-controls-hover">
+                <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                <a href="#"><i class="fa fa-refresh"></i></a>
+                <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                </div>
+                </header>
+                <div class="widget-body">
+                <!--&lt;!&ndash;<p>Status: <strong>Live</strong></p>&ndash;&gt;-->
+                <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                <!--&lt;!&ndash;<span class="circle bg-warning"><i class="fa fa-map-marker"></i></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;146 Countries, 2759 Cities&ndash;&gt;-->
+                <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--<div class="row progress-stats">-->
+                <!--<div class="col-md-9">-->
+                <!--<h6 class="name m-t-1">Egyptian Dialect</h6>-->
+                <!--&lt;!&ndash;<p class="description deemphasize">Some Cool Text</p>&ndash;&gt;-->
+                <!--<div class="bg-white progress-bar">-->
+                <!--<progress id="egyx" class="progress progress-danger progress js-progress-animate"-->
+                <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 text-xs-center">-->
+                <!--<span class="status rounded rounded-lg bg-body-light">-->
+                <!--<small><span id="percent-egyx">0</span>%</small>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row progress-stats">-->
+                <!--<div class="col-md-9">-->
+                <!--<h6 class="name m-t-1">Moroccan Dialect</h6>-->
+                <!--&lt;!&ndash;<p class="description deemphasize">P. to C. Conversion</p>&ndash;&gt;-->
+                <!--<div class="bg-white progress-bar">-->
+                <!--<progress id="norx" class="progress progress progress-danger js-progress-animate"-->
+                <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 text-xs-center">-->
+                <!--<span class="status rounded rounded-lg bg-body-light">-->
+                <!--<small><span id="percent-norx">0</span>%</small>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row progress-stats">-->
+                <!--<div class="col-md-9">-->
+                <!--<h6 class="name m-t-1">Gulf Dialect</h6>-->
+                <!--&lt;!&ndash;<p class="description deemphasize">P. to C. Conversion</p>&ndash;&gt;-->
+                <!--<div class="bg-white progress-bar">-->
+                <!--<progress id="glfx" class="progress progress progress-danger js-progress-animate"-->
+                <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 text-xs-center">-->
+                <!--<span class="status rounded rounded-lg bg-body-light">-->
+                <!--<small><span id="percent-glfx">0</span>%</small>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row progress-stats">-->
+                <!--<div class="col-md-9">-->
+                <!--<h6 class="name m-t-1">Levantine Dialect</h6>-->
+                <!--&lt;!&ndash;<p class="description deemphasize">P. to C. Conversion</p>&ndash;&gt;-->
+                <!--<div class="bg-white progress-bar">-->
+                <!--<progress id="lavx" class="progress progress progress-danger js-progress-animate"-->
+                <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 text-xs-center">-->
+                <!--<span class="status rounded rounded-lg bg-body-light">-->
+                <!--<small><span id="percent-lavx">0</span>%</small>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row progress-stats">-->
+                <!--<div class="col-md-9">-->
+                <!--<h6 class="name m-t-1">Modern Standard Arabic (MSA)</h6>-->
+                <!--&lt;!&ndash;<p class="description deemphasize">Average Bitrate</p>&ndash;&gt;-->
+                <!--<div class="bg-white progress-bar">-->
+                <!--<progress id="msax"-->
+                <!--class="progress progress-lg progress-success js-progress-animate"-->
+                <!--value="100" max="100" style="width: 0%" data-width="0%"></progress>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 text-xs-center">-->
+                <!--<span class="status rounded rounded-lg bg-body-light">-->
+                <!--<small><span id="percent-msax">0</span>%</small>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<p>Tracking: <strong>Active</strong></p>&ndash;&gt;-->
+                <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                <!--&lt;!&ndash;<span class="circle bg-warning"><i class="fa fa-cog"></i></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;391 elements installed, 84 sets&ndash;&gt;-->
+                <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="input-group mt">&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<input type="text" class="form-control" placeholder="Search Map">&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<span class="input-group-btn">&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<button type="submit" class="btn btn-default">&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<i class="fa fa-search text-gray"></i>&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;</button>&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;</span>&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<p>ASR Output:</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;<pre><code>Messenger().post({&ndash;&gt;-->
+                <!--&lt;!&ndash;message: 'There was an explosion while processing your request.',&ndash;&gt;-->
+                <!--&lt;!&ndash;type: 'error',&ndash;&gt;-->
+                <!--&lt;!&ndash;showCloseButton: true&ndash;&gt;-->
+                <!--&lt;!&ndash;});</code></pre>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
 
-                        <!--&lt;!&ndash;<div class="form-group mb-0">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label class="sr-only" for="new-event">New event</label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<textarea class="form-control" id="new-event" placeholder="Post something..." rows="12"></textarea>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                    <!--</div>-->
-                <!--</section>-->
+                <!--&lt;!&ndash;<div class="form-group mb-0">&ndash;&gt;-->
+                <!--&lt;!&ndash;<label class="sr-only" for="new-event">New event</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;<textarea class="form-control" id="new-event" placeholder="Post something..." rows="12"></textarea>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                </div>
+                </section>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <section class="widget">
 
                     <header>
@@ -1160,7 +1156,7 @@
                             What do you think? Please give us your feedback
                         </h6>
                         <div class="widget-controls">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
                             <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
                         </div>
                     </header>
@@ -1191,43 +1187,48 @@
                     </div>
                 </section>
             </div>
-            <!--<div class="col-lg-4">-->
-            <!--<section class="widget">-->
-            <!--<header>-->
-            <!--<h6>-->
-            <!--RANDOM VALUES-->
-            <!--</h6>-->
-            <!--<div class="widget-controls">-->
-            <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
-            <!--<a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>-->
-            <!--</div>-->
-            <!--</header>-->
-            <!--<div class="widget-body">-->
-            <!--<div class="stats-row">-->
-            <!--<div class="stat-item">-->
-            <!--<h6 class="name fs-sm">Overcome T.</h6>-->
-            <!--<p class="value">104.85%</p>-->
-            <!--</div>-->
-            <!--<div class="stat-item">-->
-            <!--<h6 class="name fs-sm">Takeoff Angle</h6>-->
-            <!--<p class="value">14.29&deg;</p>-->
-            <!--</div>-->
-            <!--<div class="stat-item">-->
-            <!--<h6 class="name fs-sm">World Pop.</h6>-->
-            <!--<p class="value">7,211M</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="bg-gray-lighter progress-bar">-->
-            <!--<progress class="progress progress-primary progress-xs" value="100" max="100" style="width: 60%"></progress>-->
-            <!--</div>-->
-            <!--<p>-->
-            <!--<small><span class="circle bg-warning"><i class="fa fa-plus"></i></span></small>-->
-            <!--<span class="fw-semi-bold">8 734 higher</span>-->
-            <!--than last month-->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</section>-->
-            <!--</div>-->
+            <div class="col-lg-4">
+                <section class="widget">
+                    <header>
+                        <h6>
+                            ASR OUTPUT
+                        </h6>
+                        <div class="widget-controls">
+                            <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
+                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <!--<div class="stats-row">-->
+                        <!--<div class="stat-item">-->
+                        <!--<h6 class="name fs-sm">Overcome T.</h6>-->
+                        <!--<p class="value">104.85%</p>-->
+                        <!--</div>-->
+                        <!--<div class="stat-item">-->
+                        <!--<h6 class="name fs-sm">Takeoff Angle</h6>-->
+                        <!--<p class="value">14.29&deg;</p>-->
+                        <!--</div>-->
+                        <!--<div class="stat-item">-->
+                        <!--<h6 class="name fs-sm">World Pop.</h6>-->
+                        <!--<p class="value">7,211M</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bg-gray-lighter progress-bar">-->
+                        <!--<progress class="progress progress-primary progress-xs" value="100" max="100" style="width: 60%"></progress>-->
+                        <!--</div>-->
+                        <!--<p>-->
+                        <!--<small><span class="circle bg-warning"><i class="fa fa-plus"></i></span></small>-->
+                        <!--<span class="fw-semi-bold">8 734 higher</span>-->
+                        <!--than last month-->
+                        <!--</p>-->
+                        <div class="form-group mb-0">
+                    <label class="sr-only" for="transcripts">ASR output</label>
+                    <textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="مخرجات التعرف الالي على الخطاب"
+                              rows="15" style="font-family: 'Cairo', sans-serif;"></textarea>
+                </div>
+                    </div>
+                </section>
+            </div>
         </div>
         <!--<div class="row">-->
         <!--<div class="col-lg-1">-->
