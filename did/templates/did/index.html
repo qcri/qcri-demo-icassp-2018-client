@@ -270,11 +270,11 @@
                                                                                style="height: 90px; width: 214px;"></a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <div id="csail-logo"><a href="/demos/livetranslation/"><img
-                            src="{% static 'did/img/MIT-CSAIL-STL-site-logo.2.png' %}"
-                            style="height: 100px; width: 114px;padding-bottom: 10px"></a></div>
-                </li>
+                <!--<li class="nav-item">-->
+                    <!--<div id="csail-logo"><a href="/demos/livetranslation/"><img-->
+                            <!--src="{% static 'did/img/MIT-CSAIL-STL-site-logo.2.png' %}"-->
+                            <!--style="height: 100px; width: 114px;padding-bottom: 10px"></a></div>-->
+                <!--</li>-->
                 <li class="nav-item">
 
                     <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
@@ -1022,10 +1022,50 @@
                     <!--</div>&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
                     <!--</div>-->
                 </section>
+                <section class="widget">
+                    <header>
+                        <h6>
+                            ASR OUTPUT
+                        </h6>
+                        <div class="widget-controls">
+                            <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
+                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <!--<div class="stats-row">-->
+                        <!--<div class="stat-item">-->
+                        <!--<h6 class="name fs-sm">Overcome T.</h6>-->
+                        <!--<p class="value">104.85%</p>-->
+                        <!--</div>-->
+                        <!--<div class="stat-item">-->
+                        <!--<h6 class="name fs-sm">Takeoff Angle</h6>-->
+                        <!--<p class="value">14.29&deg;</p>-->
+                        <!--</div>-->
+                        <!--<div class="stat-item">-->
+                        <!--<h6 class="name fs-sm">World Pop.</h6>-->
+                        <!--<p class="value">7,211M</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bg-gray-lighter progress-bar">-->
+                        <!--<progress class="progress progress-primary progress-xs" value="100" max="100" style="width: 60%"></progress>-->
+                        <!--</div>-->
+                        <!--<p>-->
+                        <!--<small><span class="circle bg-warning"><i class="fa fa-plus"></i></span></small>-->
+                        <!--<span class="fw-semi-bold">8 734 higher</span>-->
+                        <!--than last month-->
+                        <!--</p>-->
+                        <div class="form-group mb-0">
+                            <label class="sr-only" for="transcripts">ASR output</label>
+                            <textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="مخرجات التعرف الالي على الخطاب"
+                                      rows="15" style="font-family: 'Cairo', sans-serif;"></textarea>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 <section class="widget bg-transparent">
                 <header>
                 <h5>
@@ -1148,7 +1188,7 @@
                 </div>
                 </section>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-8">
                 <section class="widget">
 
                     <header>
@@ -1187,48 +1227,48 @@
                     </div>
                 </section>
             </div>
-            <div class="col-lg-4">
-                <section class="widget">
-                    <header>
-                        <h6>
-                            ASR OUTPUT
-                        </h6>
-                        <div class="widget-controls">
-                            <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
-                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
-                        </div>
-                    </header>
-                    <div class="widget-body">
-                        <!--<div class="stats-row">-->
-                        <!--<div class="stat-item">-->
-                        <!--<h6 class="name fs-sm">Overcome T.</h6>-->
-                        <!--<p class="value">104.85%</p>-->
+            <!--<div class="col-lg-4">-->
+                <!--<section class="widget">-->
+                    <!--<header>-->
+                        <!--<h6>-->
+                            <!--ASR OUTPUT-->
+                        <!--</h6>-->
+                        <!--<div class="widget-controls">-->
+                            <!--&lt;!&ndash;<a href="#"><i class="glyphicon glyphicon-cog"></i></a>&ndash;&gt;-->
+                            <!--<a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>-->
                         <!--</div>-->
-                        <!--<div class="stat-item">-->
-                        <!--<h6 class="name fs-sm">Takeoff Angle</h6>-->
-                        <!--<p class="value">14.29&deg;</p>-->
-                        <!--</div>-->
-                        <!--<div class="stat-item">-->
-                        <!--<h6 class="name fs-sm">World Pop.</h6>-->
-                        <!--<p class="value">7,211M</p>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="bg-gray-lighter progress-bar">-->
-                        <!--<progress class="progress progress-primary progress-xs" value="100" max="100" style="width: 60%"></progress>-->
-                        <!--</div>-->
-                        <!--<p>-->
-                        <!--<small><span class="circle bg-warning"><i class="fa fa-plus"></i></span></small>-->
-                        <!--<span class="fw-semi-bold">8 734 higher</span>-->
-                        <!--than last month-->
-                        <!--</p>-->
-                        <div class="form-group mb-0">
-                    <label class="sr-only" for="transcripts">ASR output</label>
-                    <textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="مخرجات التعرف الالي على الخطاب"
-                              rows="15" style="font-family: 'Cairo', sans-serif;"></textarea>
-                </div>
-                    </div>
-                </section>
-            </div>
+                    <!--</header>-->
+                    <!--<div class="widget-body">-->
+                        <!--&lt;!&ndash;<div class="stats-row">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="stat-item">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<h6 class="name fs-sm">Overcome T.</h6>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p class="value">104.85%</p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="stat-item">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<h6 class="name fs-sm">Takeoff Angle</h6>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p class="value">14.29&deg;</p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="stat-item">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<h6 class="name fs-sm">World Pop.</h6>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p class="value">7,211M</p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="bg-gray-lighter progress-bar">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<progress class="progress progress-primary progress-xs" value="100" max="100" style="width: 60%"></progress>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<small><span class="circle bg-warning"><i class="fa fa-plus"></i></span></small>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="fw-semi-bold">8 734 higher</span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;than last month&ndash;&gt;-->
+                        <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                        <!--<div class="form-group mb-0">-->
+                    <!--<label class="sr-only" for="transcripts">ASR output</label>-->
+                    <!--<textarea dir="rtl" class="form-control text-right" id="transcripts" placeholder="مخرجات التعرف الالي على الخطاب"-->
+                              <!--rows="15" style="font-family: 'Cairo', sans-serif;"></textarea>-->
+                <!--</div>-->
+                    <!--</div>-->
+                <!--</section>-->
+            <!--</div>-->
         </div>
         <!--<div class="row">-->
         <!--<div class="col-lg-1">-->
