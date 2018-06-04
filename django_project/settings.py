@@ -100,7 +100,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 # /home/django/django_project/django_project/static;
-STATIC_ROOT = '/home/django/django_project/django_project/static'
+# STATIC_ROOT = '/home/django/django_project/django_project/static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # Allow Django from all hosts. This snippet is installed from
