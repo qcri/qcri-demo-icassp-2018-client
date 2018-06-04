@@ -1,0 +1,2 @@
+Django==1.8.7
+netifaces==0.10.6
