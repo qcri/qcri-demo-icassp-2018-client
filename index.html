@@ -75,6 +75,42 @@
 
     </div>
 </div>
+<div class="row justify-content-center">
+    <div class="col-xl-8 ">
+
+        <header>
+            <h6>What do you think? Please give us your feedback</h6>
+            <div class="widget-controls">
+                <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+            </div>
+        </header>
+        <div class="widget-body">
+            <div id="disqus_thread"></div>
+            <script>
+
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                var disqus_config = function () {
+                    this.page.url = "https://dialectid.qcri.org/";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "dialectid-main"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://dialectid.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                powered by Disqus.</a>
+            </noscript>
+
+        </div>
+    </div>
+</div>
 <div class="buttonsContainer">
     <span class="buttons">
         <span class="value stopwatch h2 stat-item">00:00:00</span>
