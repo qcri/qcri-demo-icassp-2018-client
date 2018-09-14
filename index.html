@@ -16,6 +16,10 @@
     <link rel="stylesheet" type="text/css" href="stopwatch/css/style.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
+    <link href="gridstackjs/freelancer/css/freelancer.css" rel="stylesheet">
+    <link href="gridstackjs/dist/gridstack.css" rel="stylesheet">
+    <link href="gridstackjs/gridstack-demo.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -39,14 +43,34 @@
         <div class="col-xl-8 col-sm-12 mapcontainer">
             <div class="map">Arab world map goes here</div>
         </div>
-        <div class="col-xl-4 col-sm-12">
-            <div class="form-group" style="background: transparent; opacity: 1;">
-                <label class="display-6" for="trans">ASR output (<span id="serverStatusBar" title="Number of available workers"></span>)</label>
-                <textarea class="form-control text" id="trans" dir="rtl" rows="6"></textarea>
-                <input id="servers" name="servers" type="hidden"
-                       value="ws://dialectid3666.cloudapp.net:8888/client/ws/speech|ws://dialectid3666.cloudapp.net:8888/client/ws/status"/>
+        <div class="col-xl-4 col-sm-12 darklue">
+            <div class="grid-stack" data-gs-width="6" data-gs-animate="yes">
+                <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="4">
+                    <div class="form-group grid-stack-item-content" style="background: transparent; opacity: 1;">
+                        <div class="form-group" style="background: transparent; opacity: 1;">
+                            <label class="display-6" for="trans">ASR output (<span id="serverStatusBar"
+                                                                                   title="Number of available workers"></span>)</label>
+                            <textarea class="form-control text" id="trans" dir="rtl" rows="6"></textarea>
+                            <input id="servers" name="servers" type="hidden"
+                                   value="ws://dialectid3666.cloudapp.net:8888/client/ws/speech|ws://dialectid3666.cloudapp.net:8888/client/ws/status"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-stack-item" data-gs-x="0" data-gs-y="5" data-gs-width="7" data-gs-height="2">
+                    <div class="grid-stack-item-content" style="background: #DAF7A6;">
+                        <h6>MAIN DIALECT OF THE SPEAKER</h6>
+                        <p><span id="main-dialect">--</span> with confidence of <span
+                                id="main-dialect-prob" class="value5">0%</span></p>
+
+
+                    </div>
+                </div>
+                <div class="grid-stack-item" data-gs-x="7" data-gs-y="5" data-gs-width="5" data-gs-height="1">
+                    <div class="grid-stack-item-content" style="background: #F08080;">
+                        <pre id="log"></pre>
+                    </div>
+                </div>
             </div>
-            <pre id="log"></pre>
         </div>
 
     </div>
@@ -100,5 +124,35 @@
 <script src="dictatejs/demos/mob.js"></script>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="gridstackjs/freelancer/js/classie.js"></script>
+<script src="gridstackjs/freelancer/js/cbpAnimatedHeader.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="gridstackjs/freelancer/js/freelancer.js"></script>
+
+<script src="gridstackjs/dist/gridstack.js"></script>
+<script src="gridstackjs/dist/gridstack.jQueryUI.js"></script>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    $(function () {
+        $('.grid-stack').gridstack({
+            width: 12,
+            alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+            resizable: {
+                handles: 'e, se, s, sw, w'
+            }
+        });
+    });
+</script>
 </body>
 </html>
