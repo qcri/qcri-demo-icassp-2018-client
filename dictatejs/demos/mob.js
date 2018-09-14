@@ -124,7 +124,10 @@ var dictate = new Dictate({
             doUpper = false;
         }
         doPrependSpace = (hypText.length > 0) && !(/\n *$/.test(hypText));
-        $("#trans").scrollTop = $("#trans").scrollHeight
+        // $("#trans").scrollTop = $("#trans").scrollHeight;
+
+        document.getElementById("trans").scrollTop = document.getElementById("trans").scrollHeight;
+
 
         var sortable = [];
         for (var dialect in hypos[1]) {
