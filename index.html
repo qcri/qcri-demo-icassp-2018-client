@@ -11,7 +11,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="dictatejs/demos/css/demo.css">
-
+    <link rel="stylesheet" type="text/css" href="stopwatch/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -50,18 +50,20 @@
 </div>
 <div class="buttonsContainer">
 <span class="buttons">
-<button
-        id="buttonToggleListening"
-        onclick="toggleListening();"
-        title="Starts/stops listening for speech.">Start</button>
-<button
-        id="buttonCancel"
-        disabled="disabled"
-        onclick="cancel();"
-        title="Cancels the speech recognition.">Cancel</button>
-<button
-        onclick="clearTranscription();"
-        title="Clears the transcription">Clear</button>
+    <span class="value stopwatch h2 stat-item">00:00:00</span>
+            <br/>
+    <button
+            id="buttonToggleListening"
+            onclick="toggleListening();"
+            title="Starts/stops listening for speech.">Start</button>
+    <button
+            id="buttonCancel"
+            disabled="disabled"
+            onclick="cancel();"
+            title="Cancels the speech recognition.">Cancel</button>
+    <button
+            onclick="clearTranscription();"
+            title="Clears the transcription">Clear</button>
 </span>
 </div>
 
@@ -84,6 +86,7 @@
 <script src="js/map/arabworld2.js" charset="utf-8"></script>
 
 <script src="js/map/dialectid-map.js" type="text/javascript"></script>
+<script src="stopwatch/js/index.js" type="text/javascript"></script>
 
 <!-- Dictate JS -->
 <script src="dictatejs/lib/dictate.js"></script>

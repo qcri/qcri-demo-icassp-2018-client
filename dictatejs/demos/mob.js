@@ -64,6 +64,7 @@ var dictate = new Dictate({
         isConnected = true;
         __message("READY FOR SPEECH");
         $("#buttonToggleListening").html('Stop');
+        stopwatch.start();
         $("#buttonToggleListening").addClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
         $("#buttonCancel").prop("disabled", false);
@@ -80,12 +81,14 @@ var dictate = new Dictate({
     onEndOfSpeech: function () {
         __message("END OF SPEECH");
         $("#buttonToggleListening").html('Stopping...');
+        stopwatch.stop();
         $("#buttonToggleListening").prop("disabled", true);
     },
     onEndOfSession: function () {
         isConnected = false;
         __message("END OF SESSION");
         $("#buttonToggleListening").html('Start');
+        stopwatch.stop();
         $("#buttonToggleListening").removeClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
         $("#buttonCancel").prop("disabled", true);
