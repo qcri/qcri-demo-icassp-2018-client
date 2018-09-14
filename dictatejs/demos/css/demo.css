@@ -7,22 +7,22 @@
 #log {
 	font-size: 80%
 }
-#statusBar {
-	font-family: monospace;
-	color: #9F000F;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding: 0;
-}
-#serverStatusBar {
-	position: fixed;
-	bottom: 0.4em;
-	right: 0.4em;
-	top: auto;
-	left: auto;
-	font-family: monospace;
-	padding: 0.2em 0.2em 0.2em 0.2em;
-}
+/*#statusBar {*/
+	/*font-family: monospace;*/
+	/*color: #9F000F;*/
+	/*margin-top: 1em;*/
+	/*margin-bottom: 1em;*/
+	/*padding: 0;*/
+/*}*/
+/*#serverStatusBar {*/
+	/*position: fixed;*/
+	/*bottom: 0.4em;*/
+	/*right: 0.4em;*/
+	/*top: auto;*/
+	/*left: auto;*/
+	/*font-family: monospace;*/
+	/*padding: 0.2em 0.2em 0.2em 0.2em;*/
+/*}*/
 .highlight {
 	color: red;
 }
