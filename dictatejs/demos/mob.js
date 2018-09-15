@@ -20,6 +20,24 @@ var MIN_VOL = -100;
 var MAX_VOL = -50;
 var dialectHistory = [];
 
+var updatedOptions = {'areas': {}};
+
+var arabCountries = ["xs", "dj", "so", "eg", "sa", "qa", "om", "kw", "ae", "eh", "ma", "dz", "tn", "ly", "sy", "jo", "ps", "lb", "sd", "ye", "iq", "mr", "so", "xs", "dj"];
+var countriesOfDialect = {
+    "EGY": ["eg"],
+    "MSA": [""],
+    "GLF": ["sa", "qa", "om", "kw", "ae"],
+    "NOR": ["eh", "ma", "dz", "tn", "ly"],
+    "LAV": ["sy", "jo", "ps", "lb"]
+};
+var DialectLabels = {
+    "EGY": "Egyptain dialect",
+    "MSA": "Modern Standard Arabic (MSA)",
+    "GLF": "Gulf dialect",
+    "NOR": "Moroccan dialect",
+    "LAV": "Levantine dialect"
+};
+
 function capitaliseFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -138,29 +156,6 @@ var dictate = new Dictate({
             return b[1] - a[1];
         });
 
-        var updatedOptions = {'areas': {}};
-
-        // for (var property in $("#map").data("mapael").areas) {
-        //     console.log(property);
-        // }
-        var arabCountries = ["xs", "dj", "so", "eg", "sa", "qa", "om", "kw", "ae", "eh", "ma", "dz", "tn", "ly", "sy", "jo", "ps", "lb", "sd", "ye", "iq", "mr", "so", "xs", "dj"];
-
-        var countriesOfDialect = {
-            "EGY": ["eg"],
-            "MSA": [""],
-            "GLF": ["sa", "qa", "om", "kw", "ae"],
-            "NOR": ["eh", "ma", "dz", "tn", "ly"],
-            "LAV": ["sy", "jo", "ps", "lb"]
-        };
-
-        var DialectLabels = {
-            "EGY": "Egyptain dialect",
-            "MSA": "Modern Standard Arabic (MSA)",
-            "GLF": "Gulf dialect",
-            "NOR": "Moroccan dialect",
-            "LAV": "Levantine dialect"
-        };
-
         dialectHistory.push(sortable[0][0]);
 
         var dialectFreq = (function () {
@@ -233,8 +228,6 @@ var dictate = new Dictate({
         $("#percent-" + sortable[2][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[2][1]) * 100));
         $("#percent-" + sortable[3][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[3][1]) * 100));
         $("#percent-" + sortable[4][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[4][1]) * 100));
-
-        var $map = $mapcontainer;
 
         Object.keys($mapcontainer.data("mapael").areas).forEach(function (key, index) {
             // console.log(sortable[0][0]);
@@ -372,7 +365,31 @@ function clearTranscription() {
     $("#trans").prop("selectionEnd", 0);
 }
 
+function clearCache() {
+    var dialectHistory = [];
+    $("#main-dialect").text("--");
+    $("#main-dialect-prob").text("0%");
+    Object.keys($mapcontainer.data("mapael").areas).forEach(function (key, index) {
+        var isArab = arabCountries.includes(key);
+        if (isArab) {
+            updatedOptions.areas[key] = {
+                attrs: {
+                    fill: "#2d6a52"
+                }
+            };
+        }
+    });
+
+    $mapcontainer.trigger('update', [{
+        mapOptions: updatedOptions,
+        animDuration: 1000
+    }]);
+    stopwatch.reset();
+    $(".stopwatch").text("00:00:00");
+}
+
 function init() {
+    clearCache();
     dictate.init();
 }
 
