@@ -1,32 +1,32 @@
-.controls {
-	display: block;
-	margin-top: .5em;
-	margin-bottom: .5em;
-	padding: 0;
-}
+/*.controls {*/
+	/*display: block;*/
+	/*margin-top: .5em;*/
+	/*margin-bottom: .5em;*/
+	/*padding: 0;*/
+/*}*/
 #log {
 	font-size: 80%
 }
-#statusBar {
-	font-family: monospace;
-	color: #9F000F;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding: 0;
-	background-color: #7dd8b4;
-    width: 50%;
-}
-#serverStatusBar {
-	position: fixed;
-	bottom: 0;
-	right: 0.4em;
-	top: auto;
-	left: auto;
-	font-family: monospace;
-	padding: 0.2em 0.2em 0.2em 0.2em;
-    background-color: #7dd8b4;
-    width: 50%;
-}
+/*#statusBar {*/
+	/*font-family: monospace;*/
+	/*color: #9F000F;*/
+	/*margin-top: 1em;*/
+	/*margin-bottom: 1em;*/
+	/*padding: 0;*/
+	/*background-color: #7dd8b4;*/
+    /*width: 50%;*/
+/*}*/
+/*#serverStatusBar {*/
+	/*position: fixed;*/
+	/*bottom: 0;*/
+	/*right: 0.4em;*/
+	/*top: auto;*/
+	/*left: auto;*/
+	/*font-family: monospace;*/
+	/*padding: 0.2em 0.2em 0.2em 0.2em;*/
+    /*background-color: #7dd8b4;*/
+    /*width: 50%;*/
+/*}*/
 .highlight {
 	color: red;
 }
@@ -46,7 +46,7 @@ del {
 .buttonsContainer {
 	display: table;
 	position: fixed;
-	bottom: 2.6%;
+	bottom: 0%;
 	left: 0%;
 	width: 100%;
 	height: 10%;
@@ -62,6 +62,6 @@ del {
 	padding: 0.5em;
 }
 
-button {
+.micButton {
 	width: 7em;
 }

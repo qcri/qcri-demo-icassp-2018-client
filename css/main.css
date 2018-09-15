@@ -7,7 +7,7 @@
     font-weight:normal;
     font-size:24px;
     resize:none;
-    height: 250px;
+    height: 270px;
     line-height:40px;
     /*padding-left:100px;*/
     /*padding-right:100px;*/
@@ -22,4 +22,6 @@
     border-top:1px solid #FFF;
     border-bottom:1px solid #FFF;
 }
+
+.darklue { background: #d8d8da; color: #fff; }
 

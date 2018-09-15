@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="stopwatch/css/style.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
-    <link href="gridstackjs/freelancer/css/freelancer.css" rel="stylesheet">
+    <!--<link href="gridstackjs/freelancer/css/freelancer.css" rel="stylesheet">-->
     <link href="gridstackjs/dist/gridstack.css" rel="stylesheet">
     <link href="gridstackjs/gridstack-demo.css" rel="stylesheet">
 
@@ -48,8 +48,7 @@
                 <div class="grid-stack-item paper" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="4">
                     <div class="form-group grid-stack-item-content" style="background: transparent; opacity: 1;">
                         <div class="form-group" style="background: transparent; opacity: 1;">
-                            <label class="display-6" for="trans">ASR output (<span id="serverStatusBar"
-                                                                                   title="Number of available workers"></span>)</label>
+                            <label class="display-6" for="trans"></label>
                             <textarea class="form-control text" id="trans" dir="rtl" rows="7"></textarea>
                             <input id="servers" name="servers" type="hidden"
                                    value="wss://dialectid.qcri.org:8888/client/ws/speech|wss://dialectid.qcri.org:8888/client/ws/status"/>
@@ -65,53 +64,65 @@
                                 id="main-dialect-prob" class="h3">0%</span></small>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-x="7" data-gs-y="5" data-gs-width="12" data-gs-height="1">
+                <div class="grid-stack-item" data-gs-x="7" data-gs-y="8" data-gs-width="12" data-gs-height="2">
                     <div class="grid-stack-item-content" style="background: #F08080;">
                         <pre id="log"></pre>
+                    </div>
+                </div>
+                <div class="grid-stack-item" data-gs-x="7" data-gs-y="5" data-gs-width="5" data-gs-height="1">
+                    <div class="grid-stack-item-content" style="background: #ffbe34;">
+                        <span class=""># Available workers (<span id="serverStatusBar"
+                                                         title="Number of available workers"></span>)</span>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-</div>
-<div class="row justify-content-center">
-    <div class="col-xl-8 ">
+    <div class="row justify-content-center">
+        <div class="col-xl-8 ">
 
-        <header>
-            <h6>What do you think? Please give us your feedback</h6>
-            <div class="widget-controls">
-                <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+            <header>
+                <h6>What do you think? Please give us your feedback</h6>
+                <div class="widget-controls">
+                    <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </header>
+            <div class="widget-body">
+                <div id="disqus_thread"></div>
+                <script>
+
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                    var disqus_config = function () {
+                        this.page.url = "https://dialectid.qcri.org/";  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = "dialectid-main"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+
+                    (function () { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://dialectid.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                    powered by Disqus.</a>
+                </noscript>
+
             </div>
-        </header>
-        <div class="widget-body">
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-                var disqus_config = function () {
-                    this.page.url = "https://dialectid.qcri.org/";  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = "dialectid-main"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function () { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://dialectid.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
-                powered by Disqus.</a>
-            </noscript>
-
         </div>
     </div>
 </div>
+
 <div class="buttonsContainer">
+    <!--<button type="button" class="btn btn-light">-->
+        <!--Available workers <span class="badge badge-warning"><span id="serverStatusBar"-->
+                                                        <!--title="Number of available workers"></span></span>-->
+        <!--<span class="sr-only"># users that can be accepted by the server</span>-->
+    <!--</button>-->
     <a href="https://github.com/qcri" target="_blank">
         <svg width="80" height="80" viewBox="0 0 250 250"
              style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;">
@@ -126,18 +137,18 @@
         <span class="value stopwatch h2 stat-item">00:00:00</span>
                 <br/>
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-        <button type="button" class="btn btn-secondary" id="buttonToggleListening" onclick="toggleListening();"
+        <button type="button" class="btn btn-secondary micButton" id="buttonToggleListening" onclick="toggleListening();"
                 title="Starts/stops listening for speech.">Start</button>
-        <button type="button" class="btn btn-secondary" id="buttonCancel" disabled="disabled" onclick="cancel();"
+        <button type="button" class="btn btn-secondary micButton" id="buttonCancel" disabled="disabled" onclick="cancel();"
                 title="Cancels the speech recognition.">Cancel</button>
 
         <div class="btn-group" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle micButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                 more ...
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" onclick="clearTranscription();" href="#">Clear cached data</a>
+                <a class="dropdown-item" onclick="clearTranscription();clearCache();" href="#">Clear cached data</a>
                 <a class="dropdown-item" onclick="init();" href="#">Re-initialize Microphone</a>
             </div>
         </div>
@@ -183,13 +194,13 @@
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="gridstackjs/freelancer/js/classie.js"></script>
-<script src="gridstackjs/freelancer/js/cbpAnimatedHeader.js"></script>
+<!--<script src="gridstackjs/freelancer/js/classie.js"></script>-->
+<!--<script src="gridstackjs/freelancer/js/cbpAnimatedHeader.js"></script>-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="gridstackjs/freelancer/js/freelancer.js"></script>
+<!--<script src="gridstackjs/freelancer/js/freelancer.js"></script>-->
 
 <script src="gridstackjs/dist/gridstack.js"></script>
 <script src="gridstackjs/dist/gridstack.jQueryUI.js"></script>
