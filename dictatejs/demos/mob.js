@@ -372,6 +372,10 @@ function clearTranscription() {
     $("#trans").prop("selectionEnd", 0);
 }
 
+function init() {
+    dictate.init();
+}
+
 $(document).ready(function () {
     dictate.init();
 

@@ -47,7 +47,6 @@
             <div class="grid-stack" data-gs-width="6" data-gs-animate="yes">
                 <div class="grid-stack-item paper" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="5">
                     <div class="form-group grid-stack-item-content" style="background: transparent; opacity: 1;">
-
                         <div class="form-group" style="background: transparent; opacity: 1;">
                             <label class="display-6" for="trans">ASR output (<span id="serverStatusBar"
                                                                                    title="Number of available workers"></span>)</label>
@@ -63,8 +62,6 @@
                         <small>MAIN DIALECT OF THE SPEAKER</small><br/>
                         <small><span id="main-dialect" class="h3">--</span> with confidence of <span
                                 id="main-dialect-prob" class="h3">0%</span></small>
-
-
                     </div>
                 </div>
                 <div class="grid-stack-item" data-gs-x="7" data-gs-y="5" data-gs-width="5" data-gs-height="1">
@@ -122,18 +119,22 @@
     <span class="buttons">
         <span class="value stopwatch h2 stat-item">00:00:00</span>
                 <br/>
-        <button
-                id="buttonToggleListening"
-                onclick="toggleListening();"
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-secondary" id="buttonToggleListening" onclick="toggleListening();"
                 title="Starts/stops listening for speech.">Start</button>
-        <button
-                id="buttonCancel"
-                disabled="disabled"
-                onclick="cancel();"
+        <button type="button" class="btn btn-secondary" id="buttonCancel" disabled="disabled" onclick="cancel();"
                 title="Cancels the speech recognition.">Cancel</button>
-        <button
-                onclick="clearTranscription();"
-                title="Clears the transcription">Clear</button>
+
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                more ...
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" onclick="clearTranscription();" href="#">Clear cached data</a>
+                <a class="dropdown-item" onclick="init();" href="#">Re-initialize Microphone</a>
+            </div>
+        </div>
+    </div>
     </span>
     <img src="img/qcri.png" style="height: 90px; width: 214px;">
     <img src="img/MIT-CSAIL-STL-logo.png" style="height: 100px; width: 114px;padding-bottom: 10px">
