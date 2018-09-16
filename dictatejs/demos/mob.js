@@ -112,6 +112,7 @@ var dictate = new Dictate({
         $("#buttonToggleListening").prop("disabled", false);
         $("#buttonCancel").prop("disabled", true);
         $("#resetButton").prop("disabled", false);
+        $('#feedbackModal').modal('show');
     },
     onServerStatus: function (json) {
         __serverStatus(json.num_workers_available);
