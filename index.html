@@ -20,6 +20,15 @@
     <link href="gridstackjs/dist/gridstack.css" rel="stylesheet">
     <link href="gridstackjs/gridstack-demo.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <style>
+        .thefont {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -44,8 +53,9 @@
             <div class="map">Arab world map goes here</div>
         </div>
         <div class="col-xl-4 col-sm-12 darklue">
+
             <div class="grid-stack" data-gs-width="6" data-gs-animate="yes">
-                <div class="grid-stack-item paper" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="4">
+                <div class="grid-stack-item paper" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="5">
                     <div class="form-group grid-stack-item-content" style="background: transparent; opacity: 1;">
                         <div class="form-group" style="background: transparent; opacity: 1;">
                             <label class="display-6" for="trans"></label>
@@ -56,25 +66,88 @@
                     </div>
                 </div>
                 <div class="grid-stack-item" data-gs-x="0" data-gs-y="5" data-gs-width="7" data-gs-height="2">
-                    <div class="grid-stack-item-content" style="background: #027BCE;">
+                    <div class="grid-stack-item-content thefont" style="background: #027BCE;">
 
-                        <small>MAIN DIALECT OF THE SPEAKER</small>
-                        <br/>
-                        <small><span id="main-dialect" class="h3">--</span> with confidence of <span
-                                id="main-dialect-prob" class="h3">0%</span></small>
+                        <h3>The speaker is <span id="main-dialect-prob">0%</span> <span id="main-dialect">--</span></h3>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-x="7" data-gs-y="8" data-gs-width="12" data-gs-height="2">
+                <div class="grid-stack-item" data-gs-x="7" data-gs-y="10" data-gs-width="12" data-gs-height="2">
                     <div class="grid-stack-item-content" style="background: #F08080;">
                         <pre id="log"></pre>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-x="7" data-gs-y="5" data-gs-width="5" data-gs-height="1">
-                    <div class="grid-stack-item-content" style="background: #ffbe34;">
-                        <span class=""># Available workers (<span id="serverStatusBar"
-                                                         title="Number of available workers"></span>)</span>
+                <div class="grid-stack-item" data-gs-x="0" data-gs-y="6" data-gs-width="5" data-gs-height="1">
+                    <div class="grid-stack-item-content" style="background: #ffbe34;padding-top: 20px;padding-left: 20px">
+                        <span class="thefont"># Available workers (<span id="serverStatusBar"
+                                                                  title="Number of available workers"></span>)</span>
                     </div>
                 </div>
+
+                <div class="grid-stack-item " data-gs-x="7" data-gs-y="6" data-gs-width="5" data-gs-height="3">
+                    <div class="grid-stack-item-content thefont" style="background: #3aafc7; line-height: 210%;">
+                        <div class="">
+                            <div class="clearfix fs-mini mt">
+                                <span class="">Egyptian</span>
+                                <span class="fs-mini pull-xs-left"><span id="percent-egy">0</span>%</span>
+                            </div>
+                            <div class="progress" style="height:5px">
+                                <!--<progress id="egy" class="progress progress-danger progress-xs" value="100" max="100"-->
+                                <!--style="width: 0%; height: 5px; border: 0px solid red;background-color: #f00;"></progress>-->
+                                <div id="egy" class="progress-bar bg-danger" role="progressbar" style="width: 0%;"
+                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="clearfix fs-mini mt">
+                                <span class="pull-xs-right no-margin fw-semi-bold">North African</span>
+                                <span class="fs-mini pull-xs-left"><span id="percent-nor">0</span>%</span>
+                            </div>
+                            <div class="progress" style="height:5px">
+                                <!--<progress id="nor" class="progress" value="100" max="100"-->
+                                <!--style="width: 0%; height: 5px; border: 0px solid red;"></progress>-->
+                                <div id="nor" class="progress-bar bg-danger" role="progressbar" style="width: 0%;"
+                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="clearfix fs-mini mt">
+                                <span class="pull-xs-right no-margin fw-semi-bold">Gulf</span>
+                                <span class="fs-mini pull-xs-left"><span id="percent-glf">0</span>%</span>
+                            </div>
+                            <div class="progress" style="height:5px">
+                                <!--<progress id="glf" class="progress progress-danger progress-xs" value="100" max="100"-->
+                                <!--style="width: 0%; height: 5px; border: 0px solid red;"></progress>-->
+                                <div id="glf" class="progress-bar bg-danger" role="progressbar" style="width: 0%;"
+                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="clearfix fs-mini mt">
+                                <span class="pull-xs-right no-margin fw-semi-bold">Levantine</span>
+                                <span class="fs-mini pull-xs-left"><span id="percent-lav">0</span>%</span>
+                            </div>
+                            <div class="progress" style="height:5px">
+                                <!--<progress id="lav" class="progress progress-danger progress-xs" value="100" max="100"-->
+                                <!--style="width: 0%; height: 5px; border: 0px solid red;"></progress>-->
+                                <div id="lav" class="progress-bar bg-danger" role="progressbar" style="width: 0%;"
+                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="clearfix fs-mini mt">
+                                <span class="pull-xs-right no-margin fw-semi-bold">MSA</span>
+                                <span class="fs-mini pull-xs-left"><span id="percent-msa">0</span>%</span>
+                            </div>
+                            <div class="progress" style="height:5px">
+                                <!--<progress id="msa" class="progress progress-danger progress-xs" value="100" max="100"-->
+                                <!--style="width: 0%; height: 5px; border: 0px solid red;"></progress>-->
+                                <div id="msa" class="progress-bar bg-danger" role="progressbar" style="width: 0%;"
+                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -119,9 +192,9 @@
 
 <div class="buttonsContainer">
     <!--<button type="button" class="btn btn-light">-->
-        <!--Available workers <span class="badge badge-warning"><span id="serverStatusBar"-->
-                                                        <!--title="Number of available workers"></span></span>-->
-        <!--<span class="sr-only"># users that can be accepted by the server</span>-->
+    <!--Available workers <span class="badge badge-warning"><span id="serverStatusBar"-->
+    <!--title="Number of available workers"></span></span>-->
+    <!--<span class="sr-only"># users that can be accepted by the server</span>-->
     <!--</button>-->
     <a href="https://github.com/qcri" target="_blank">
         <svg width="80" height="80" viewBox="0 0 250 250"
@@ -137,13 +210,16 @@
         <span class="value stopwatch h2 stat-item">00:00:00</span>
                 <br/>
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-        <button type="button" class="btn btn-secondary micButton" id="buttonToggleListening" onclick="toggleListening();"
+        <button type="button" class="btn btn-secondary micButton" id="buttonToggleListening"
+                onclick="toggleListening();"
                 title="Starts/stops listening for speech.">Start</button>
-        <button type="button" class="btn btn-secondary micButton" id="buttonCancel" disabled="disabled" onclick="cancel();"
+        <button type="button" class="btn btn-secondary micButton" id="buttonCancel" disabled="disabled"
+                onclick="cancel();"
                 title="Cancels the speech recognition.">Cancel</button>
 
         <div class="btn-group" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle micButton" data-toggle="dropdown"
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle micButton"
+                    data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                 more ...
             </button>

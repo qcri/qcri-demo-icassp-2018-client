@@ -31,11 +31,11 @@ var countriesOfDialect = {
     "LAV": ["sy", "jo", "ps", "lb"]
 };
 var DialectLabels = {
-    "EGY": "Egyptain dialect",
+    "EGY": "Egyptain",
     "MSA": "Modern Standard Arabic (MSA)",
-    "GLF": "Gulf dialect",
-    "NOR": "Moroccan dialect",
-    "LAV": "Levantine dialect"
+    "GLF": "Gulf",
+    "NOR": "Moroccan",
+    "LAV": "Levantine"
 };
 
 function capitaliseFirstLetter(string) {
