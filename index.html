@@ -91,15 +91,15 @@
                     </div>
                 </div>
                 <!--<div class="grid-stack-item" data-gs-x="7" data-gs-y="10" data-gs-width="12" data-gs-height="2">-->
-                    <!--<div class="grid-stack-item-content" style="background: #F08080;">-->
-                        <!--<pre id="log"></pre>-->
-                    <!--</div>-->
+                <!--<div class="grid-stack-item-content" style="background: #F08080;">-->
+                <!--<pre id="log"></pre>-->
+                <!--</div>-->
                 <!--</div>-->
                 <!--<div class="grid-stack-item" data-gs-x="0" data-gs-y="6" data-gs-width="5" data-gs-height="1">-->
-                    <!--<div class="grid-stack-item-content" style="background: #ffbe34;padding-top: 20px;padding-left: 20px">-->
-                        <!--<span class="thefont"># Available workers (<span id="serverStatusBar"-->
-                                                                  <!--title="Number of available workers"></span>)</span>-->
-                    <!--</div>-->
+                <!--<div class="grid-stack-item-content" style="background: #ffbe34;padding-top: 20px;padding-left: 20px">-->
+                <!--<span class="thefont"># Available workers (<span id="serverStatusBar"-->
+                <!--title="Number of available workers"></span>)</span>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <div class="grid-stack-item " data-gs-x="7" data-gs-y="6" data-gs-width="5" data-gs-height="3">
@@ -210,11 +210,6 @@
 </div>
 
 <div class="buttonsContainer">
-    <!--<button type="button" class="btn btn-light">-->
-    <!--Available workers <span class="badge badge-warning"><span id="serverStatusBar"-->
-    <!--title="Number of available workers"></span></span>-->
-    <!--<span class="sr-only"># users that can be accepted by the server</span>-->
-    <!--</button>-->
     <a href="https://github.com/qcri" target="_blank">
         <svg width="80" height="80" viewBox="0 0 250 250"
              style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;">
@@ -228,11 +223,13 @@
     <span class="buttons">
         <span class="value stopwatch h2 stat-item">00:00:00</span>
                 <br/>
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-light"><span id="serverStatusBar"
+                class="badge badge-warning" title="Number of available workers">
+            </span><span class="sr-only"># users that can be accepted by the server</span></button>
         <button type="button" class="btn btn-secondary micButton" id="buttonToggleListening"
                 onclick="toggleListening();"
-                title="Starts/stops listening for speech.">Speak <span id="serverStatusBar" class="badge badge-light"
-                                                                        title="Number of available workers"></span></button>
+                title="Starts/stops listening for speech.">Speak</button>
         <button type="button" class="btn btn-secondary micButton" id="buttonCancel" disabled="disabled"
                 onclick="cancel();"
                 title="Cancels the speech recognition.">Cancel</button>
@@ -251,8 +248,9 @@
     </div>
     </span>
     <div class="hidden-md-down rmelement">
-    <img class="hidden-sm-down" src="img/qcri.png" style="height: 90px; width: 214px;">
-    <img class="hidden-sm-down" src="img/MIT-CSAIL-STL-logo.png" style="height: 100px; width: 114px;padding-bottom: 10px">
+        <img class="hidden-sm-down" src="img/qcri.png" style="height: 90px; width: 214px;">
+        <img class="hidden-sm-down" src="img/MIT-CSAIL-STL-logo.png"
+             style="height: 100px; width: 114px;padding-bottom: 10px">
     </div>
 </div>
 

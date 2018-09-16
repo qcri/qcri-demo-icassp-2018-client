@@ -81,7 +81,7 @@ var dictate = new Dictate({
     onReadyForSpeech: function () {
         isConnected = true;
         __message("READY FOR SPEECH");
-        $("#buttonToggleListening").html('Stop <span id="serverStatusBar" class="badge badge-light" title="Number of available workers"></span>');
+        $("#buttonToggleListening").html('Stop');
         stopwatch.start();
         $("#buttonToggleListening").addClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
@@ -106,7 +106,7 @@ var dictate = new Dictate({
     onEndOfSession: function () {
         isConnected = false;
         __message("END OF SESSION");
-        $("#buttonToggleListening").html('Speak <span id="serverStatusBar" class="badge badge-light" title="Number of available workers"></span>');
+        $("#buttonToggleListening").html('Speak');
         stopwatch.stop();
         $("#buttonToggleListening").removeClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
@@ -417,5 +417,4 @@ $(document).ready(function () {
         dictate.setServer(servers[0]);
         dictate.setServerStatus(servers[1]);
     });
-
 });
