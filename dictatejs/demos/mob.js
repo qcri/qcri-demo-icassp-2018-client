@@ -81,7 +81,7 @@ var dictate = new Dictate({
     onReadyForSpeech: function () {
         isConnected = true;
         __message("READY FOR SPEECH");
-        $("#buttonToggleListening").html('Stop');
+        $("#buttonToggleListening").html('Stop <span id="serverStatusBar" class="badge badge-light" title="Number of available workers"></span>');
         stopwatch.start();
         $("#buttonToggleListening").addClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
@@ -106,7 +106,7 @@ var dictate = new Dictate({
     onEndOfSession: function () {
         isConnected = false;
         __message("END OF SESSION");
-        $("#buttonToggleListening").html('Start');
+        $("#buttonToggleListening").html('Speak <span id="serverStatusBar" class="badge badge-light" title="Number of available workers"></span>');
         stopwatch.stop();
         $("#buttonToggleListening").removeClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
@@ -144,7 +144,6 @@ var dictate = new Dictate({
             doUpper = false;
         }
         doPrependSpace = (hypText.length > 0) && !(/\n *$/.test(hypText));
-        // $("#trans").scrollTop = $("#trans").scrollHeight;
 
         document.getElementById("trans").scrollTop = document.getElementById("trans").scrollHeight;
 
