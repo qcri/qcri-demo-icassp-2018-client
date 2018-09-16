@@ -1,0 +1,23 @@
+.grid-stack-item-content {
+    background: #5dc4bf;
+    color: #ffffff;
+    font-family: 'Indie Flower', cursive;
+    /*text-align: center;*/
+    /*font-size: 20px;*/
+    /*margin: 0px 0px 0px;*/
+    padding: 10px 10px 10px 10px;
+    opacity: 1;
+}
+
+/*.grid-stack-item-content .fa {*/
+    /*font-size: 64px;*/
+    /*display: block;*/
+    /*margin: 5px 0 5px;*/
+/*}*/
+
+/*header a, header a:hover { color: #fff; }*/
+
+
+.darklue hr.star-light::after {
+    background-color: #2c3e50;
+}
