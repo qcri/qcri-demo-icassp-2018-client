@@ -224,13 +224,13 @@
                 title="Cancels the speech recognition.">Cancel</button>
 
         <div class="btn-group" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle micButton"
+            <button id="resetButton" type="button" class="btn btn-secondary dropdown-toggle micButton"
                     data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                 more ...
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" onclick="clearTranscription();clearCache();" href="#">Clear cached data</a>
+                <a class="dropdown-item" onclick="clearCache();" href="#">Clear cached data</a>
                 <a class="dropdown-item" onclick="init();" href="#">Re-initialize Microphone</a>
             </div>
         </div>

@@ -23,16 +23,5 @@
     border-bottom:1px solid #FFF;
 }
 
-.thefont {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 16px;
-}
-
-@media (max-width: 40em) {
-    .rmelement {
-        display: none;
-    }
-}
-
 .darklue { background: #d8d8da; color: #fff; }
 

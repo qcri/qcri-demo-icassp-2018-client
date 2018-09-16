@@ -86,6 +86,7 @@ var dictate = new Dictate({
         $("#buttonToggleListening").addClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
         $("#buttonCancel").prop("disabled", false);
+        $("#resetButton").prop("disabled", true);
         startPosition = $("#trans").prop("selectionStart");
         endPosition = startPosition;
         var textBeforeCaret = $("#trans").val().slice(0, startPosition);
@@ -110,6 +111,7 @@ var dictate = new Dictate({
         $("#buttonToggleListening").removeClass('highlight');
         $("#buttonToggleListening").prop("disabled", false);
         $("#buttonCancel").prop("disabled", true);
+        $("#resetButton").prop("disabled", false);
     },
     onServerStatus: function (json) {
         __serverStatus(json.num_workers_available);
@@ -367,6 +369,7 @@ function clearTranscription() {
 
 function clearCache() {
     var dialectHistory = [];
+    clearTranscription();
     $("#main-dialect").text("--");
     $("#main-dialect-prob").text("0%");
     Object.keys($mapcontainer.data("mapael").areas).forEach(function (key, index) {
@@ -386,11 +389,24 @@ function clearCache() {
     }]);
     stopwatch.reset();
     $(".stopwatch").text("00:00:00");
+
+    $("#egy").css("width", "0%");
+    $("#lav").css("width", "0%");
+    $("#nor").css("width", "0%");
+    $("#msa").css("width", "0%");
+    $("#glf").css("width", "0%");
+
+    $("#percent-egy").text(0);
+    $("#percent-lav").text(0);
+    $("#percent-glf").text(0);
+    $("#percent-msa").text(0);
+    $("#percent-nor").text(0);
 }
 
 function init() {
     clearCache();
     dictate.init();
+    clearTranscription();
 }
 
 $(document).ready(function () {
