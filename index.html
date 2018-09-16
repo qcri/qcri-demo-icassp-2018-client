@@ -27,6 +27,12 @@
             font-family: 'Ubuntu', sans-serif;
             font-size: 16px;
         }
+
+        @media (max-width: 40em) {
+            .rmelement {
+                display: none;
+            }
+        }
     </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -230,8 +236,10 @@
         </div>
     </div>
     </span>
-    <img src="img/qcri.png" style="height: 90px; width: 214px;">
-    <img src="img/MIT-CSAIL-STL-logo.png" style="height: 100px; width: 114px;padding-bottom: 10px">
+    <div class="hidden-md-down rmelement">
+    <img class="hidden-sm-down" src="img/qcri.png" style="height: 90px; width: 214px;">
+    <img class="hidden-sm-down" src="img/MIT-CSAIL-STL-logo.png" style="height: 100px; width: 114px;padding-bottom: 10px">
+    </div>
 </div>
 
 

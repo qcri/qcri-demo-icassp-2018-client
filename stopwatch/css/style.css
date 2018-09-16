@@ -37,7 +37,8 @@
 
 .stopwatch {
   color: #fff;
-  font-size: 2vw;
+  font-size: 28px;
+  /*font-size: 2vw;*/
   /*height: 100%;*/
   /*line-height: 100vh;*/
   text-align: center;
