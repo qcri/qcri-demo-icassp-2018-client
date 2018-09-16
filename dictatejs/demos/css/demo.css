@@ -5,7 +5,9 @@
 	/*padding: 0;*/
 /*}*/
 #log {
-	font-size: 80%
+	/*font-size: 80%;*/
+	color: inherit;
+	font: inherit;
 }
 /*#statusBar {*/
 	/*font-family: monospace;*/
