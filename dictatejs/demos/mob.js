@@ -96,6 +96,8 @@ var dictate = new Dictate({
             doUpper = false;
         }
         doPrependSpace = (textBeforeCaret.length > 0) && !(/\n *$/.test(textBeforeCaret));
+        $('#processingModal').modal('show');
+        spin();
     },
     onEndOfSpeech: function () {
         __message("END OF SPEECH");
