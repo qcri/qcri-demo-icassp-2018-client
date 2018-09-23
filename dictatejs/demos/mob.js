@@ -34,7 +34,7 @@ var DialectLabels = {
     "EGY": "Egyptain",
     "MSA": "Modern Standard Arabic (MSA)",
     "GLF": "Gulf",
-    "NOR": "Moroccan",
+    "NOR": "North African",
     "LAV": "Levantine"
 };
 
