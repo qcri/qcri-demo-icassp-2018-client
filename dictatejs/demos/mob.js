@@ -81,6 +81,7 @@ var dictate = new Dictate({
     onReadyForSpeech: function () {
         isConnected = true;
         __message("READY FOR SPEECH");
+        $('.buttonsContainer').addClass('live');
         $("#buttonToggleListening").html('Stop');
         stopwatch.start();
         $("#buttonToggleListening").addClass('highlight');
@@ -104,6 +105,7 @@ var dictate = new Dictate({
         $("#buttonToggleListening").html('Stopping...');
         stopwatch.stop();
         $("#buttonToggleListening").prop("disabled", true);
+        $('.buttonsContainer').removeClass('live');
     },
     onEndOfSession: function () {
         isConnected = false;
@@ -114,6 +116,7 @@ var dictate = new Dictate({
         $("#buttonToggleListening").prop("disabled", false);
         $("#buttonCancel").prop("disabled", true);
         $("#resetButton").prop("disabled", false);
+        $('.buttonsContainer').removeClass('live');
         //$('#feedbackModal').modal('show');
     },
     onServerStatus: function (json) {
@@ -234,10 +237,8 @@ var dictate = new Dictate({
         $("#percent-" + sortable[4][0].toLowerCase()).text(Math.ceil(parseFloat(sortable[4][1]) * 100));
 
         Object.keys($mapcontainer.data("mapael").areas).forEach(function (key, index) {
-            // console.log(sortable[0][0]);
             if (countriesOfDialect[sortable[0][0]].indexOf(key) > -1) {
-                //
-                if (sortable[0][0] == "MSA") {
+                if (sortable[0][0] === "MSA") {
                     updatedOptions.areas[key] = {
                         attrs: {
                             fill: "#4d9c58"
@@ -250,26 +251,22 @@ var dictate = new Dictate({
                         }
                     }
                 }
-                ;
             } else if (countriesOfDialect[sortable[1][0]].indexOf(key) > -1) {
-                // $("#egy").css("width", parseFloat(sortable[1][1])*100+"%");
                 updatedOptions.areas[key] = {
                     attrs: {
                         fill: "#915201"
                     }
                 };
             } else if (countriesOfDialect[sortable[2][0]].indexOf(key) > -1) {
-                // $("#egy").css("width", parseFloat(sortable[2][1])*100+"%");
                 updatedOptions.areas[key] = {
                     attrs: {
                         fill: "#482900"
                     }
                 };
             } else if (countriesOfDialect[sortable[3][0]].indexOf(key) > -1) {
-                // $("#egy").css("width", parseFloat(sortable[3][1])*100+"%");
                 updatedOptions.areas[key] = {
                     attrs: {
-                        fill: "#646464"
+                        fill: "#bbb"
                     }
                 };
             } else {
@@ -278,7 +275,7 @@ var dictate = new Dictate({
                 if (isArab) {
                     updatedOptions.areas[key] = {
                         attrs: {
-                            fill: "#646464"
+                            fill: "#bbb"
                         }
                     };
                 }

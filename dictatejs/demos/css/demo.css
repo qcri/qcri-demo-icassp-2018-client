@@ -58,6 +58,29 @@ del {
 	opacity: 1;
 }
 
+.live {
+	animation:changeColor 3s;
+	-moz-animation:changeColor 3s infinite; /* Firefox */
+	-webkit-animation:changeColor 3s infinite; /* Safari and Chrome */
+	transition: all 0.2s ease-in;
+}
+
+
+@-moz-keyframes changeColor /* Firefox */
+{
+	0%   {background:#5dc4bf;}
+	50%   {background:#F09090;}
+	100%   {background:#5dc4bf;}
+}
+
+@-webkit-keyframes changeColor /* Safari and Chrome */
+{
+	0%   {background:#5dc4bf;}
+	50%   {background:#F09090;}
+	100%   {background:#5dc4bf;}
+}
+
+
 .buttons {
 	display: table-cell;
 	vertical-align: middle;
