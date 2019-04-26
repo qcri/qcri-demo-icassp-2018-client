@@ -11,9 +11,11 @@ var tt = new Transcription();
 var dictate = new Dictate({
 		//server : "wss://bark.phon.ioc.ee:8443/dev/duplex-speech-api/ws/speech",
 		//serverStatus : "wss://bark.phon.ioc.ee:8443/dev/duplex-speech-api/ws/status",
-		server : "ws://dialectid3666.cloudapp.net:8888/client/ws/speech",
-		serverStatus : "ws://dialectid3666.cloudapp.net:8888/client/ws/status",
-		recorderWorkerPath : '../lib/recorderWorker.js',
+		server : "ws://45.55.56.40:8888/client/ws/speech",
+		serverStatus : "ws://45.55.56.40:8888/client/ws/status",
+    	referenceHandler: 'http://45.55.56.40:8888/dev/duplex-speech-api/dynamic/reference',
+		// recorderWorkerPath : '../lib/recorderWorker.js',
+		recorderWorkerPath : 'dictatejs/lib/recorderWorker.js',
 		onReadyForSpeech : function() {
 			__message("READY FOR SPEECH");
 			__status("Kuulan ja transkribeerin...");
@@ -79,6 +81,51 @@ function __serverStatus(msg) {
 
 function __updateTranscript(text) {
 	$("#trans").val(text);
+	// $("#seg").val(text);
+
+
+
+
+    var segmenter = $.post('https://farasa-api.qcri.org/msa/webapi/segmenter', {text: text})
+        .done(function (data) {
+            //alert(data.output);
+            $("#seg").empty().append(data.segtext.join(" "));
+        })
+        .fail(function () {
+            console.log("segmenter error");
+        });
+
+
+    var ner = $.post('http://qatsdemo.cloudapp.net/farasa/requestExecuter.php', {
+        query:text, task:5})
+        .done(function (data) {
+            // alert(data);
+            $("#ner").empty().append(data);
+        })
+        .fail(function () {
+            console.log("NER error");
+        });
+
+    //     var xhttp = new XMLHttpRequest();
+    // 	//xhttp.withCredentials = true;
+    //     xhttp.onreadystatechange = function() {
+    //         if (this.readyState == 4 ) {
+    //             document.getElementById("ner").innerHTML = this.responseText;
+    //         }
+    //     };
+    //     xhttp.open("POST", "http://qatsdemo.cloudapp.net/farasa/requestExecuter.php", true);
+    //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	//
+	//
+    // var data = "query=%D9%85%D8%AD%D9%85%D8%AF%20%D9%81%D9%8A%20%D9%82%D8%B7%D8%B1&task=5";
+    //     xhttp.send(data);
+
+// # payload_ner = urlencode({'query': pg, 'task':5})
+// # conn_ner.request("POST", "/farasa/requestExecuter.php", payload_ner, headers_ner)
+// # response_ner = conn_ner.getresponse()
+// # data_ner = response_ner.read().decode("utf-8")
+// # data_ner = data_ner.replace('<p class="form-control-static" style="direction:rtl;font-size: 25px;">','').replace('</p>', '')
+// # ner_pgs.append(data_ner)
 }
 
 // Public methods (called from the GUI)
